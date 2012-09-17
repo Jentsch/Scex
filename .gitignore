@@ -12,5 +12,8 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 
+#sbt
+.history
+
 # current run creates a sample
 demo.ps
