@@ -1,20 +1,16 @@
 package org.scex
 
-package object attributes {
+package object attributes
+	extends Breaks
+	with Color.PreDefs
+	with Display 
+	with Font
+	with Text
+	with Spaces {
+  
   type Attribute[T] = org.scex.Attribute[T]
+  class Toggle extends Attribute[Boolean] with org.scex.Annotation.Toggle
 
-  val bold = FontWeight > 700
-  
-  final case class Break private[attributes](val name: String)
-  val auto = Break("auto")
-  val column = Break("column")
-  val page = Break("page")
-  val evenPage = Break("evenPage")
-  val oddPage = Break("oddPage")
-  
-  object BreakAfter extends Attribute[Break]
-  object BreakBefore extends Attribute[Break]
-  
   val PreText = new Annotation.Processor[String] {
     def process(value: String, elem: Element) = {
 	  helper(value, elem) match {
@@ -26,6 +22,8 @@ package object attributes {
     private def helper(value: String, elem: Node): Node = elem match {
 	  case Element(first :: others, attr) => 
 		Element(helper(value, first) :: others, attr)
+	  case Element(none, attr) =>
+	    Element(Text(value) +: none, attr)
 	  case Text(text) => 
 		Text(value+text)
 	  }

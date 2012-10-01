@@ -7,20 +7,21 @@ object PDF extends App with Builder {
   def text = 
     FontFamily > "Times Roman" &
     FontSize > 20 &
-    SpaceAfter > 30 &
     TextAlign > "justify"
-
+  
   def headline = text & 
     FontFamily > "Helvetica" & 
     FontSize > 28 &
-    SpaceAfter > 6
+    SpaceAfter > 6 &
+    + TextUnderline
 
   def title = headline &
     FontSize > 38 &
     SpaceAfter > 10 &
     SpaceBefore > 12 &
     TextAlign > "center" &
-	BreakBefore > page
+	BreakBefore > page &
+	TextColor > Color(0,0,128)
 
   def section = headline &
     BreakBefore > page
@@ -31,14 +32,14 @@ object PDF extends App with Builder {
 	TextAlign > "center"
   
   def list = {
-    val block = SpaceAfter > 10
+    val block = bold
 	val line  = text & SpaceAfter > 0 & PreText > "• "
 	
 	line asMinorOf block
   }
 
   title | 
-  "Scex"
+  "Scex!"
   
   title |
   "Scex"
@@ -48,20 +49,29 @@ object PDF extends App with Builder {
   
   text | "a inner DSL for Scala to be like Latex"
 
-  section | 
-  "Motivation"
-
-  text | 
-  "I have some data and I want present them in a report."
-
-  text | 
-  """My hole project is written Scala, no other languages like Java, SQL or XML.
-  But now I have to add a new language (or not)."""
-
-  section | 
-  "Why not use..."
+  text |
+  new Section("Motivation") {
+    text |
+    "I have some data and I want present them in a report."
+    
+    text |
+    """My hole project is written Scala, no other languages like Java, SQL or XML.
+    But now I have to add a new language (or not)."""
+    
+    text |
+    "So why not use something familar, somthing known good..."
+  }
   
-  title | "Scala!"
+  
+  class Section(text: String) extends Builder {
+    val test = PDF.section.|(text)
+  }
+  
+  text & Display > table | new Builder {
+    
+  }
+  
+  text & TextColor > red | "Scala!"
   
   section | "What's better?"
   
@@ -93,4 +103,5 @@ object PDF extends App with Builder {
   text | "Everything is in memory, so it consumes more RAM than a template system that forgets erverything after the content generation"
   
   generators.PDF(this)
+  generators.PDF.printXML(this)
 }
