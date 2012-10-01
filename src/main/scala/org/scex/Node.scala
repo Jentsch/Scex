@@ -19,7 +19,7 @@ object Node {
    */
   trait Builder extends Element  {
     protected implicit val self = this
-		
+    
     private var buffer = List.empty[Node]
     lazy val children = buffer.map { 
 	  case child: Element =>
@@ -59,11 +59,9 @@ object Node {
       case that => Element(List(this, that), Bindings.empty)
 	}
 
-    override def toString = try {
+    override def toString =
       attributes.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
-    } catch {
-      case e => e.getClass.getSimpleName
-    }
+    
   }
   object Element {
     def apply(child: Seq[Node], attribute: Bindings = Bindings.empty): Element = new Element {
