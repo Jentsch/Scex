@@ -17,12 +17,20 @@ sealed trait Annotation[T] {
 }
 
 object Annotation {
-  trait Attribute[T] extends Annotation[T]
+  class Attribute[T] extends Annotation[T]
   
-  trait Processor[T] extends Annotation[T] {
+  abstract class Processor[T] extends Annotation[T] {
     def apply(value: T, node: Element) =
 	  process(value, node)
 	
     def process(value: T, node: Element): Element
+  }
+  
+  trait Toggle {
+    this: Annotation[Boolean]=>
+      
+    def unary_+ = this > true
+    def unary_- = this > false
+    
   }
 }

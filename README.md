@@ -8,3 +8,5 @@ How to run?
 
 This is a SBT-Project. Unfortunately ~run crash with a NullPointerException, but ~; run; clean works well - 
 aside the compilation need more time.
+
+src/main/scala/org/scex/sample/PDF.scala is the main-class.
