@@ -27,10 +27,6 @@ object Color {
     
     val res = new Color(r * 256 * 256 | g * 256 | b)
     
-    println(res.toHex)
-    println(s"$r,$g,$b")
-    println(s"${res.r},${res.g},${res.b}")
-    
     res
   }
   
