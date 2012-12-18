@@ -1,5 +1,6 @@
 *.class
 *.log
+*.swp
 
 # sbt specific
 dist/*
@@ -16,4 +17,4 @@ project/plugins/project/
 .history
 
 # current run creates a sample
-demo.ps
+demo.*
