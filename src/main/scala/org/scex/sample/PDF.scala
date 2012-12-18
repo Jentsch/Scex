@@ -67,10 +67,6 @@ object PDF extends App with Builder {
     val test = PDF.section.|(text)
   }
   
-  text & Display > table | new Builder {
-    
-  }
-  
   text & TextColor > red | "Scala!"
   
   section | "What's better?"
