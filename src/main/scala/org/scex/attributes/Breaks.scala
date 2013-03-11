@@ -10,6 +10,6 @@ trait Breaks {
   }
   val column = new Break("coluomn")
   
-  val BreakBefore = new Attribute[Break]
-  val BreakAfter  = new Attribute[Break]
+  val BreakBefore = new Attribute[Break]("BreakBefore")
+  val BreakAfter  = new Attribute[Break]("BreakAfter")
 }

@@ -1,5 +1,7 @@
 package org.scex
 
+import org.scex._
+
 package object attributes
 	extends Breaks
 	with Color.PreDefs
@@ -9,9 +11,9 @@ package object attributes
 	with Spaces {
   
   type Attribute[T] = org.scex.Attribute[T]
-  class Toggle extends Attribute[Boolean] with org.scex.Annotation.Toggle
+  class Toggle(name: String) extends Attribute[Boolean](name) with org.scex.Annotation.Toggle
 
-  val PreText = new Annotation.Processor[String] {
+  val PreText = new Annotation.Processor[String]("PreText") {
     def process(value: String, elem: Element) = {
 	  helper(value, elem) match {
 	    case result: Element => result
@@ -27,5 +29,26 @@ package object attributes
 	  case Text(text) => 
 		Text(value+text)
 	  }
+  }
+  
+  val WrapLines = new Annotation.Processor[Bindings]("WrapLines")  {
+    def process(value: Bindings, elem: Element) = {
+      val Element(Seq(Text(text)), binds) = elem
+      println(elem)
+      
+      new Builder {
+      	text.lines.map(s => value | s).to[Seq]
+      }
+    }
+  }
+  
+  val HighLightKeyWords = new Annotation.Processor[Bindings]("WrapLines") {
+    def process(value: Bindings, elem: Element) = {
+      val Element(Seq(Text(text)), binds) = elem
+      
+      new Builder {
+        
+      }
+    }
   }
 }
