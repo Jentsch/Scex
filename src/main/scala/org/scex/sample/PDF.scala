@@ -3,73 +3,72 @@ package org.scex.sample
 import org.scex._
 import org.scex.attributes._
 
-object PDF extends App with Builder {
-  def text = 
-    FontFamily > "Times Roman" &
-    FontSize > 20 &
-    TextAlign > "justify"
-  
-  def headline = text & 
-    FontFamily > "Helvetica" & 
-    FontSize > 28 &
-    SpaceAfter > 6 &
-    + TextUnderline
-
-  def title = headline &
-    FontSize > 38 &
-    SpaceAfter > 10 &
-    SpaceBefore > 12 &
-    TextAlign > "center" &
-	BreakBefore > page &
-	TextColor > Color(0,0,128)
-
-  def section = headline &
-    BreakBefore > page
-
-  def em = text & bold
-  
-  def subtitle = headline &
-	TextAlign > "center"
-  
-  def list = {
-    val block = bold
-	val line  = text & SpaceAfter > 0 & PreText > "• "
-	
-	line asMinorOf block
-  }
-
-  title | 
-  "Scex!"
-  
+object PDF extends templates.Presentation with templates.Run {
   title |
   "Scex"
   
   subtitle |
   "Sc(ala) (Lat)ex"
   
-  text | "a inner DSL for Scala to be like Latex"
+  text | 
+  "a inner DSL for Scala to be like Latex"
 
+  section |
+  "Motivation"
+  
   text |
-  new Section("Motivation") {
-    text |
-    "I have some data and I want present them in a report."
+  "I have some data and I want present them in a report."
+  
+  text |  """
+  My hole project is written Scala, no other languages like Java, SQL or XML.
+  But now I have to add a new language (or not).
+  """
     
-    text |
-    """My hole project is written Scala, no other languages like Java, SQL or XML.
-    But now I have to add a new language (or not)."""
+  text |
+  "So why not use something familar, somthing known good..."
     
-    text |
-    "So why not use something familar, somthing known good..."
-  }
-  
-  
-  class Section(text: String) extends Builder {
-    val test = PDF.section.|(text)
-  }
-  
   text & TextColor > red | "Scala!"
   
-  section | "What's better?"
+  chapter |
+  "Examples"
+  
+  section |
+  "Text"
+  
+  text |
+  "How to write text:"
+  
+  code | """
+    text |
+    "Here is your Text"
+  """
+  
+  section |
+  "Sections"
+  
+  code | """
+    chapter | 
+    "Chapter One"
+  
+    text |
+    "Your first chapter"
+  """
+  
+  section |
+  "Definitions"
+  
+  code | """
+     def warning = text & TextColor > red
+     override def text = super.text & FontFamily > "MyFont"
+  """
+  
+  text |
+  "You could use rgb(255, 0, 0) as well."
+  
+  chapter |
+  "Conclusion"
+  
+  section | "What's cool?"
   
   text | "Everything is type save"
   
@@ -97,7 +96,4 @@ object PDF extends App with Builder {
   text | "A bit more overhead, e.g. trible quots"
   
   text | "Everything is in memory, so it consumes more RAM than a template system that forgets erverything after the content generation"
-  
-  generators.PDF(this)
-  generators.PDF.printXML(this)
 }

@@ -53,7 +53,7 @@ object PDF {
   private def body(node: Node) =
     <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
       <fo:layout-master-set>
-        <fo:simple-page-master master-name="simpleA4" page-height="297mm" page-width="210mm" margin-top="2cm" margin-bottom="2cm" margin-left="2cm" margin-right="2cm">
+        <fo:simple-page-master master-name="simpleA4" page-height="150mm" page-width="200mm" margin-top="2cm" margin-bottom="2cm" margin-left="2cm" margin-right="2cm">
           <fo:region-body/>
         </fo:simple-page-master>
       </fo:layout-master-set>
