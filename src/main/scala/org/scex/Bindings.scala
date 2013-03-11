@@ -45,7 +45,7 @@ trait Bindings extends Iterable[Binding[_]] {
   /**
    * Returns all annotations of this binding.
    */
-  def annotations = bindings map {_.annotation} toSet
+  def annotations = bindings.map{_.annotation}.toSet
 
   override def toString = bindings.mkString("Bindings(", ", ",")")
 }

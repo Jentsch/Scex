@@ -1,7 +1,9 @@
 package org
 
+import language.implicitConversions
+
 /**
- * Scex is tool to build documents in Scala.
+ * Scex is a tool to build documents in Scala.
  */
 package object scex {
   type Element = Node.Element
