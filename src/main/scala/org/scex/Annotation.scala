@@ -12,14 +12,16 @@ sealed trait Annotation[T] {
       Some(binding.value.asInstanceOf[T])
     else
       None
+      
+  val name: String
 
-  override def toString = this.getClass.getSimpleName.takeWhile(_ != '$')
+  override def toString = name
 }
 
 object Annotation {
-  class Attribute[T] extends Annotation[T]
+  class Attribute[T](val name: String) extends Annotation[T]
   
-  abstract class Processor[T] extends Annotation[T] {
+  abstract class Processor[T](val name: String) extends Annotation[T] {
     def apply(value: T, node: Element) =
 	  process(value, node)
 	
