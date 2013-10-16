@@ -22,18 +22,27 @@ object Node {
 
     private var buffer = List.empty[Node]
     lazy val children = buffer.map { 
-	  case child: Element =>
-	    child.attributes.foldLeft(Element(child.children, Bindings.empty): Element) {
-	      case (elem:Element, bind @ Binding(_: Attribute[_], _)) => Element(elem.children, elem.attributes & bind)
-		  case (elem:Element, Binding(proc: Processor[_], value)) => proc(value, elem)
-	    }
-	  case text: Text => text
-	}
+      case child: Element =>
+        child.attributes.foldLeft(Element(child.children, Bindings.empty): Element) {
+          case (elem:Element, bind @ Binding(_: Attribute[_], _)) => Element(elem.children, elem.attributes & bind)
+          case (elem:Element, Binding(proc: Processor[_], value)) => proc(value, elem)
+        }
+      case text: Text => text
+    }
 	
     val attributes = Bindings.empty
 		
-    def register(n: Node) {
+    private[scex] def register(n: Node) {
       buffer = buffer :+ n
+    }
+
+    import scala.language.implicitConversions
+    /**
+     * Used to allow Bindings as String Interpolator
+     */
+    implicit protected def toStringContext(sc: StringContext): this.type = {
+      stringContext = sc
+      this
     }
   }
   

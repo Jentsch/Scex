@@ -9,6 +9,9 @@ trait General extends Builder {
     FontFamily > "Times Roman" &
     FontSize > 12 &
     TextAlign > "justify"
+
+  def p = text &
+    Display > block
   
   def headline = text & 
     FontFamily > "Verdana" & 
@@ -16,7 +19,8 @@ trait General extends Builder {
     SpaceBefore > 10 &
     SpaceAfter > 6 &
     bold &
-    TextAlign > "left"
+    TextAlign > "left" &
+    Display > block
 
   def title = headline &
     FontSize > 38 &

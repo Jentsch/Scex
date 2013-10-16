@@ -48,6 +48,11 @@ trait Bindings extends Iterable[Binding[_]] {
   def annotations = bindings.map{_.annotation}.toSet
 
   override def toString = bindings.mkString("Bindings(", ", ",")")
+
+  def apply(params: Any*)(implicit b: Builder) = {
+    val sc = stringContext getOrElse sys.error("No StringContext given")
+    this | sc.s(params : _*)
+  }
 }
 
 object Bindings {

@@ -1,7 +1,9 @@
 package org.scex.attributes
 
 trait Display {
-  sealed class DisplayKind(val name: String)
+  sealed class DisplayKind private[Display](val name: String) {
+    override def toString = name
+  }
   
   /**
    * Every element the is a block receive its own line.
