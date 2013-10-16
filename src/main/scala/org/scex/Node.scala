@@ -17,9 +17,9 @@ object Node {
   /**
    * Helper to create new nodes.
    */
-  trait Builder extends Element  {
+  trait Builder extends Element {
     protected implicit val self = this
-    
+
     private var buffer = List.empty[Node]
     lazy val children = buffer.map { 
 	  case child: Element =>
@@ -29,7 +29,7 @@ object Node {
 	    }
 	  case text: Text => text
 	}
-		
+	
     val attributes = Bindings.empty
 		
     def register(n: Node) {

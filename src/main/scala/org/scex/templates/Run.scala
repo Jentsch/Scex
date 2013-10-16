@@ -18,8 +18,9 @@ trait Run extends General {
       _ ()
     }
     
-    generators.PDF(this)
-    generators.PDF.printXML(this)
+    scala.xml.XML.save("/home/mi/djentsch/Dropbox/test.html", generators HTML this, "UTF-8")
+
+    println(generators HTML this)
   }
 
 }

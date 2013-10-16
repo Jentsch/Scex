@@ -23,16 +23,16 @@ trait General extends Builder {
     SpaceAfter > 10 &
     SpaceBefore > 12 &
     TextAlign > "center" &
-	BreakBefore > page
-  
+    BreakBefore > page
+ 
   def subtitle = headline &
-	TextAlign > "center"
+    TextAlign > "center"
 
   def author = 
     headline &
     PreText > "Autor: " &
-	TextAlign > "center"
-  
+    TextAlign > "center"
+
   def chapter = headline &
   	BreakBefore > page &
   	FontSize > 32

@@ -1,9 +1,9 @@
 name := "Scex"
 
-scalaVersion := "2.10.0"
+version := "0.2-SNAPSHOT"
 
-scalacOptions += "-deprecation"
+organization := "de.fu"
 
-scalacOptions += "-feature"
+scalaVersion := "2.10.3"
 
-libraryDependencies += "org.apache.xmlgraphics" % "fop" % "1.0"
+scalacOptions ++= Seq("-deprecation", "-feature")

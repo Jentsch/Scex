@@ -5,7 +5,7 @@ package org.scex.attributes
  */
 trait Text {
   val TextAlign = new Attribute[String]("TextAlign")
-  
+
   val TextColor = new Attribute[Color]("TextColor")
   
   sealed class TextTransform(val name: String)

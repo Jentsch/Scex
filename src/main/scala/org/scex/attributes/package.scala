@@ -11,7 +11,10 @@ package object attributes
 	with Spaces {
   
   type Attribute[T] = org.scex.Attribute[T]
-  class Toggle(name: String) extends Attribute[Boolean](name) with org.scex.Annotation.Toggle
+
+  class Toggle(name: String) 
+    extends Attribute[Boolean](name)
+    with Annotation.Toggle
 
   val PreText = new Annotation.Processor[String]("PreText") {
     def process(value: String, elem: Element) = {
