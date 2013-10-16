@@ -34,8 +34,8 @@ package object attributes
 	  }
   }
   
-  val WrapLines = new Annotation.Processor[Bindings]("WrapLines")  {
-    def process(value: Bindings, elem: Element) = {
+  val WrapLines = new Annotation.Processor[Modifiers]("WrapLines")  {
+    def process(value: Modifiers, elem: Element) = {
       val Element(Seq(Text(text)), binds) = elem
       println(elem)
       
@@ -45,8 +45,8 @@ package object attributes
     }
   }
   
-  val HighLightKeyWords = new Annotation.Processor[Bindings]("WrapLines") {
-    def process(value: Bindings, elem: Element) = {
+  val HighLightKeyWords = new Annotation.Processor[Modifiers]("WrapLines") {
+    def process(value: Modifiers, elem: Element) = {
       val Element(Seq(Text(text)), binds) = elem
       
       new Builder {

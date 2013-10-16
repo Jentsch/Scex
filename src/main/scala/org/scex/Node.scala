@@ -4,7 +4,7 @@ sealed trait Node {
   /**
    * Creates a new node by adding attributes
    */
-  def add(bindings: Bindings): Node
+  def add(modifiers: Modifiers): Node
   
   /**
    * Combines to nodes.
@@ -23,14 +23,14 @@ object Node {
     private var buffer = List.empty[Node]
     lazy val children = buffer.map { 
       case child: Element =>
-        child.attributes.foldLeft(Element(child.children, Bindings.empty): Element) {
-          case (elem:Element, bind @ Binding(_: Attribute[_], _)) => Element(elem.children, elem.attributes & bind)
-          case (elem:Element, Binding(proc: Processor[_], value)) => proc(value, elem)
+        child.attributes.foldLeft(Element(child.children, Modifiers.empty): Element) {
+          case (elem:Element, bind @ Modifier(_: Attribute[_], _)) => Element(elem.children, elem.attributes & bind)
+          case (elem:Element, Modifier(proc: Processor[_], value)) => proc(value, elem)
         }
       case text: Text => text
     }
 	
-    val attributes = Bindings.empty
+    val attributes = Modifiers.empty
 		
     private[scex] def register(n: Node) {
       buffer = buffer :+ n
@@ -38,7 +38,7 @@ object Node {
 
     import scala.language.implicitConversions
     /**
-     * Used to allow Bindings as String Interpolator
+     * Used to allow Modifiers as String Interpolator
      */
     implicit protected def toStringContext(sc: StringContext): this.type = {
       stringContext = sc
@@ -50,22 +50,22 @@ object Node {
    * Text elements contains only one string and have no attributes.
    */
   final case class Text(val text: String) extends Node {
-    def add(bindings: Bindings) = Element(List(this), bindings)
+    def add(modifiers: Modifiers) = Element(List(this), modifiers)
 	def +  (that: Node) =
-	  Element(List(this, that), Bindings.empty)
+	  Element(List(this, that), Modifiers.empty)
   }
   
   trait Element extends Node {
-    def attributes: Bindings
+    def attributes: Modifiers
     def children: Seq[Node]
 
-    def add(bindings: Bindings) = Element(children, attributes & bindings)
+    def add(modifiers: Modifiers) = Element(children, attributes & modifiers)
 	
 	def +  (that: Node) = that match {
 	  case text: Text if (this.attributes.isEmpty) => Element(children :+ text, attributes)
 	  case that: Element if (this.attributes.isEmpty && that.attributes.isEmpty) =>
-	    Element(this.children ++ that.children, Bindings.empty)
-      case that => Element(List(this, that), Bindings.empty)
+	    Element(this.children ++ that.children, Modifiers.empty)
+      case that => Element(List(this, that), Modifiers.empty)
 	}
 
     override def toString =
@@ -73,7 +73,7 @@ object Node {
     
   }
   object Element {
-    def apply(child: Seq[Node], attribute: Bindings = Bindings.empty): Element = new Element {
+    def apply(child: Seq[Node], attribute: Modifiers = Modifiers.empty): Element = new Element {
       val children = child
       val attributes = attribute
     }

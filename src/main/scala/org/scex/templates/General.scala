@@ -47,12 +47,12 @@ trait General extends Builder {
   
   def list = {
     val block = text
-	val line  = 
-	  text & 
-	  SpaceAfter > 0 & 
-	  PreText > "• "
+    val line  = 
+      text & 
+      SpaceAfter > 0 & 
+      PreText > "• "
 	
-	line asMinorOf block
+    line asMinorOf block
   }
   	
   def code = text &

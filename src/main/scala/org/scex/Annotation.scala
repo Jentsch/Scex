@@ -2,14 +2,14 @@ package org.scex
 
 sealed trait Annotation[T] {
   /**
-   * Creates a binding.
+   * Creates a modifier.
    */
-  def > (value:T) = new Binding(this, value)
+  def > (value:T) = new Modifier(this, value)
   
   //XXX: Casting
-  def unapply(binding: Binding[_]) = 
-    if (binding.annotation == this)
-      Some(binding.value.asInstanceOf[T])
+  def unapply(modifier: Modifier[_]) = 
+    if (modifier.annotation == this)
+      Some(modifier.value.asInstanceOf[T])
     else
       None
       

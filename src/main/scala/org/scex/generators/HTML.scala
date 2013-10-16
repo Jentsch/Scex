@@ -24,10 +24,10 @@ object HTML {
       <div style={style(atts)}>{ch.map(content(_))}</div>
   }
 
-  private def style(atts: Bindings) = 
+  private def style(atts: Modifiers) = 
     atts.
       map{
-        case Binding(name, value) => 
+        case Modifier(name, value) => 
           toCSS(name) + ": " +value.toString
       }.
       mkString("; ")
