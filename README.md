@@ -6,7 +6,8 @@ An inner DSL in Scala to write documents.
 How to run?
 -----------
 
-This is a SBT-Project. Unfortunately ~run crash with a NullPointerException, but ~; run; clean works well - 
-aside the compilation need more time.
+This is a developing libary, may you want to run some examples.
 
-src/main/scala/org/scex/sample/PDF.scala is the main-class.
+API
+----
+The is hosted under: http://jentsch.github.io/Scex/api
