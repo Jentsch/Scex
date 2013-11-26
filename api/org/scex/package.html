@@ -40,7 +40,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Scex is a tool to build documents in Scala.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -94,20 +94,20 @@
         <a href="Annotation.html"><span class="name">Annotation</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Annotations for <code>Nodes</code>.</p>
     </li><li name="org.scex.Attribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Attribute[T]=org.scex.Annotation.Attribute[T]"></a>
+      <a id="Attribute[T]extendsAnnotation[T]"></a>
       <a id="Attribute[T]:Attribute[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">type</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Attribute</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> = <a href="Annotation$$Attribute.html" class="extype" name="org.scex.Annotation.Attribute">scex.Annotation.Attribute</a>[<span class="extype" name="org.scex.Attribute.T">T</span>]</span>
+        <a href="Attribute.html"><span class="name">Attribute</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Attribute.T">T</span>]</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Attributes are passiv data for a generator, e.</p>
     </li><li name="org.scex.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="BatchModifiersextendsAnyRef"></a>
       <a id="BatchModifiers:BatchModifiers"></a>
@@ -121,29 +121,29 @@
       </span>
       </h4>
       <p class="comment cmt">Used to modify multiple nodes.</p>
-    </li><li name="org.scex.Builder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Builder=org.scex.Node.Builder"></a>
+    </li><li name="org.scex.Builder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BuilderextendsElement"></a>
       <a id="Builder:Builder"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">type</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Builder</span><span class="result"> = <a href="Node$$Builder.html" class="extype" name="org.scex.Node.Builder">scex.Node.Builder</a></span>
+        <a href="Builder.html"><span class="name">Builder</span></a><span class="result"> extends <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
       </span>
       </h4>
-      
-    </li><li name="org.scex.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Element=org.scex.Node.Element"></a>
+      <p class="comment cmt">Helper to create new nodes.</p>
+    </li><li name="org.scex.Element" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ElementextendsNode"></a>
       <a id="Element:Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">type</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Element</span><span class="result"> = <a href="Node$$Element.html" class="extype" name="org.scex.Node.Element">scex.Node.Element</a></span>
+        <a href="Element.html"><span class="name">Element</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a></span>
       </span>
       </h4>
       
@@ -186,32 +186,45 @@
       </span>
       </h4>
       
-    </li><li name="org.scex.Processor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Processor[T]=org.scex.Annotation.Processor[T]"></a>
+    </li><li name="org.scex.Processor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Processor[T]extendsAnnotation[T]"></a>
       <a id="Processor[T]:Processor[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Processor</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> = <a href="Annotation$$Processor.html" class="extype" name="org.scex.Annotation.Processor">scex.Annotation.Processor</a>[<span class="extype" name="org.scex.Processor.T">T</span>]</span>
+        <a href="Processor.html"><span class="name">Processor</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Processor.T">T</span>]</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">A processor can modifiy annotated nodes.</p>
     </li><li name="org.scex.Text" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Text=org.scex.Node.Text"></a>
+      <a id="TextextendsNodewithProductwithSerializable"></a>
       <a id="Text:Text"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Text</span><span class="result"> = <a href="Node$$Text.html" class="extype" name="org.scex.Node.Text">scex.Node.Text</a></span>
+        <a href="Text.html"><span class="name">Text</span></a><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Text elements contains only one string and have no attributes.</p>
+    </li><li name="org.scex.Toggle" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ToggleextendsAnyRef"></a>
+      <a id="Toggle:Toggle"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Toggle.html"><span class="name">Toggle</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Inject usefull methods for Annotations of Booleans.</p>
     </li></ol>
             </div>
 
@@ -219,20 +232,7 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.scex.Annotation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Annotation"></a>
-      <a id="Annotation:Annotation"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a href="Annotation$.html"><span class="name">Annotation</span></a>
-      </span>
-      </h4>
-      
-    </li><li name="org.scex.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.scex.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="BatchModifiers"></a>
       <a id="BatchModifiers:BatchModifiers"></a>
       <h4 class="signature">
@@ -245,16 +245,16 @@
       </span>
       </h4>
       
-    </li><li name="org.scex.package#Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Element:org.scex.Node.Element.type"></a>
-      <a id="Element:scex.Node.Element.type"></a>
+    </li><li name="org.scex.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Element"></a>
+      <a id="Element:Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Element</span><span class="result">: <a href="Node$$Element$.html" class="extype" name="org.scex.Node.Element">scex.Node.Element</a>.type</span>
+        <a href="Element$.html"><span class="name">Element</span></a>
       </span>
       </h4>
       
@@ -281,19 +281,6 @@
       </span>
       <span class="symbol">
         <a href="Node$.html"><span class="name">Node</span></a>
-      </span>
-      </h4>
-      
-    </li><li name="org.scex.package#Text" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Text:org.scex.Node.Text.type"></a>
-      <a id="Text:scex.Node.Text.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">Text</span><span class="result">: <span class="extype" name="org.scex.Node.Text">scex.Node.Text</span>.type</span>
       </span>
       </h4>
       
@@ -337,15 +324,15 @@
       </h4>
       
     </li><li name="org.scex.package#strToText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="strToText(str:String):org.scex.Node.Text"></a>
-      <a id="strToText(String):scex.Node.Text"></a>
+      <a id="strToText(str:String):org.scex.Text"></a>
+      <a id="strToText(String):Text"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">strToText</span><span class="params">(<span name="str">str: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Node$$Text.html" class="extype" name="org.scex.Node.Text">scex.Node.Text</a></span>
+        <span class="name">strToText</span><span class="params">(<span name="str">str: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Text.html" class="extype" name="org.scex.Text">Text</a></span>
       </span>
       </h4>
       
@@ -376,15 +363,15 @@
       </h4>
       
     </li><li name="org.scex.package#strsToTexts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="strsToTexts(strs:Seq[String]):Seq[org.scex.Node.Text]"></a>
-      <a id="strsToTexts(Seq[String]):Seq[scex.Node.Text]"></a>
+      <a id="strsToTexts(strs:Seq[String]):Seq[org.scex.Text]"></a>
+      <a id="strsToTexts(Seq[String]):Seq[Text]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">strsToTexts</span><span class="params">(<span name="strs">strs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Node$$Text.html" class="extype" name="org.scex.Node.Text">scex.Node.Text</a>]</span>
+        <span class="name">strsToTexts</span><span class="params">(<span name="strs">strs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Text.html" class="extype" name="org.scex.Text">Text</a>]</span>
       </span>
       </h4>
       
