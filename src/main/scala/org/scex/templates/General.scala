@@ -5,16 +5,16 @@ import attributes._
 
 trait General extends Builder {
 
-  def text = 
+  def text =
     FontFamily > "Times Roman" &
     FontSize > 12 &
     TextAlign > "justify"
 
   def p = text &
     Display > block
-  
-  def headline = text & 
-    FontFamily > "Verdana" & 
+
+  def headline = text &
+    FontFamily > "Verdana" &
     FontSize > 28 &
     SpaceBefore > 10 &
     SpaceAfter > 6 &
@@ -28,11 +28,11 @@ trait General extends Builder {
     SpaceBefore > 12 &
     TextAlign > "center" &
     BreakBefore > page
- 
+
   def subtitle = headline &
     TextAlign > "center"
 
-  def author = 
+  def author =
     headline &
     PreText > "Autor: " &
     TextAlign > "center"
@@ -44,23 +44,15 @@ trait General extends Builder {
   def section = headline
 
   def em = text & bold
-  
+
   def list = {
     val block = text
-    val line  = 
-      text & 
-      SpaceAfter > 0 & 
+    val line  =
+      text &
+      SpaceAfter > 0 &
       PreText > "• "
-	
+
     line asMinorOf block
   }
-  	
-  def code = text &
-    FontFamily > "Consolas" &
-    WrapLines > codeLine
-    
-  def codeLine = text &
-    HighLightKeyWords > keyWord
-  
-  def keyWord = bold
 }
+

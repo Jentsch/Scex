@@ -29,7 +29,7 @@ object HTML extends templates.Presentation with templates.Run {
   
   p"How to write text:"
   
-  code"""
+  p"""
     p"Here is your Text"
   """
 
@@ -37,7 +37,7 @@ object HTML extends templates.Presentation with templates.Run {
   
   section"Sections"
   
-  code"""
+  p"""
     chapter"Chapter One"
   
     p"Your first chapter"
@@ -45,7 +45,7 @@ object HTML extends templates.Presentation with templates.Run {
   
   section"Definitions"
   
-  code"""
+  p"""
      def warning = p & TextColor > red
      override def p = super.p & FontFamily > "MyFont"
   """
