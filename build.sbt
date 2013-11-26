@@ -12,7 +12,7 @@ scalacOptions <<= baseDirectory map {
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
-scalacOptions ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blob/master€{FILE_PATH}.scala")
+scalacOptions in doc ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blob/master€{FILE_PATH}.scala")
 
-scalacOptions ++= Opts.doc.title("Scex")
+scalacOptions in doc ++= Opts.doc.title("Scex")
 
