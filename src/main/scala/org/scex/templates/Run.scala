@@ -18,9 +18,12 @@ trait Run extends General {
       _ ()
     }
     
-    scala.xml.XML.save("/home/mi/djentsch/Dropbox/test.html", generators HTML this, "UTF-8")
+    scala.xml.XML.save(filename, generators HTML this, "UTF-8")
 
-    println(generators HTML this)
+    println("Documente saved under " + filename)
   }
 
+  private def filename = name + ".html"
+
+  private def name = this.getClass.getSimpleName.takeWhile(_ != '$')
 }
