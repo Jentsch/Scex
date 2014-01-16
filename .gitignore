@@ -9,6 +9,8 @@ lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
+.history
+
 
 # Scala-IDE specific
 .scala_dependencies
@@ -17,8 +19,7 @@ project/plugins/project/
 .project
 .settings/
 
-#sbt
-.history
+# output of the example
+HTML.html
+PDF.html
 
-# current run creates a sample
-demo.*
