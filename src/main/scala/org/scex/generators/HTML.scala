@@ -8,15 +8,16 @@ import xml.{Elem => XElem}
 import xml.{TopScope, Null}
 
 object HTML {
-  def apply(node: Node): XNode = 
+  def apply(node: Node): XNode =
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
     { content(node) }
   </body>
 </html>
-    
+
   private def content(node: Node): XNode = node match {
     case Text(text) =>
       XText(text)
@@ -24,10 +25,10 @@ object HTML {
       <div style={style(atts)}>{ch.map(content(_))}</div>
   }
 
-  private def style(atts: Modifiers) = 
+  private def style(atts: Modifiers) =
     atts.
       map{
-        case Modifier(name, value) => 
+        case Modifier(name, value) =>
           toCSS(name) + ": " +value.toString
       }.
       mkString("; ")
