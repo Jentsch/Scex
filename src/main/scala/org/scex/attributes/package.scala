@@ -7,7 +7,6 @@ package object attributes
 	with Color.PreDefs
 	with Display
 	with Font
-	with Text
 	with Spaces {
 
   private[attributes] type Attribute[T] = org.scex.Attribute[T]
@@ -35,5 +34,27 @@ package object attributes
       }
 
 	}
+
+  val TextAlign = new Attribute[String]("TextAlign")
+
+  val TextColor = new Attribute[Color]("TextColor")
+
+  final class TextTransform private[attributes](val name: String)
+  /**
+   *  Puts the first character of each word in uppercase.
+   */
+  val capitalize = new TextTransform("capitalize")
+  /** Puts all characters of each word in uppercase. */
+  val uppercase  = new TextTransform("uppercase")
+  /** Puts all characters of each word in lowercase */
+  val lowercase  = new TextTransform("lowercase")
+
+  val TextTransform = new Attribute[TextTransform]("TextTransform")
+
+  val TextUnderline = new Toggle("TextUnderline")
+  val TextOverline = new Toggle("TextOverline")
+  val TextLineThrought = new Toggle("TextLineThrought")
+  /** May not supported by all generators. */
+  val TextBlink = new Toggle("TextBlink")
 }
 
