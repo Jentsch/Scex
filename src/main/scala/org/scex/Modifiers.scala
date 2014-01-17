@@ -1,23 +1,24 @@
-package org.scex
+﻿package org.scex
 import scala.collection.generic.TraversableFactory
 
 /**
- * A set of Modifiers. Is like a Map[Annotation[T], T].
+ * A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
+ * this way.
  */
 trait Modifiers extends Iterable[Modifier[_]] {
-  
+
   protected val modifiers: Seq[Modifier[_]]
-  
+
   def iterator = modifiers.iterator
-  
+
   // XXX: Is in O(n), should be O(log n)
   def get[T](annotation: Annotation[T]) =
     modifiers.
     collectFirst{case annotation(t) => t}
-  
+
   def isDefinedAt(annotation: Annotation[_]) =
     get(annotation) != None
-    
+
   def apply[T](annotation: Annotation[T]) =
     get(annotation).get
 	
@@ -26,13 +27,13 @@ trait Modifiers extends Iterable[Modifier[_]] {
 	
   override def filter(condition: Modifier[_] => Boolean) =
     Modifiers(modifiers filter condition)
-  
-  override def filterNot(condition: Modifier[_] => Boolean) = 
-	Modifiers(modifiers filterNot condition)
-  
-  def ++ (that: Modifiers) = 
+ 
+  override def filterNot(condition: Modifier[_] => Boolean) =
+    Modifiers(modifiers filterNot condition)
+
+  def ++ (that: Modifiers) =
     Modifiers(modifiers.filterNot{bind => that.annotations.contains(bind.annotation)} ++ that.modifiers)
-  
+
   /**
    * Binds attributes to a node a append the node to a builder.
    */
@@ -41,7 +42,7 @@ trait Modifiers extends Iterable[Modifier[_]] {
 
   def asMinorOf (that: Modifiers) =
     BatchModifiers(that, this)
-    
+
   /**
    * Returns all annotations of this modifier.
    */
@@ -62,6 +63,6 @@ object Modifiers {
       val modifiers = binds
     }
   }
-  
+
   val empty = Modifiers(List.empty)
 }
