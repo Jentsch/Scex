@@ -12,9 +12,6 @@ sealed trait Node {
   def +(that: Node): Element
 }
 
-object Node {
-}
-
 /**
  * Text elements contains only one string and have no attributes.
  */
@@ -40,6 +37,12 @@ trait Element extends Node {
 
   override def toString =
     attributes.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
+
+  /**
+   * Creates a new element.
+   */
+  def update(modifiers: Modifiers = attributes, children: Seq[Node] = children) =
+    Element(children, modifiers)
 }
 
 object Element {
