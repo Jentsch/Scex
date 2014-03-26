@@ -1,4 +1,4 @@
-name := "Scex"
+name := "scex"
 
 version := "0.2-SNAPSHOT"
 
