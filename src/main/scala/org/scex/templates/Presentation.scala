@@ -11,6 +11,6 @@ trait Presentation extends General {
   
   override def headline = 
     super.headline &
-	BreakBefore > page &
-	TextAlign > "center"
+    BreakBefore > page &
+    TextAlign > "center"
 }

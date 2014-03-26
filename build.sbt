@@ -16,3 +16,5 @@ scalacOptions in doc ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blo
 
 scalacOptions in doc ++= Opts.doc.title("Scex")
 
+libraryDependencies += "org.specs2" %% "specs2" % "2.3.10" % "test"
+

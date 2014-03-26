@@ -56,5 +56,11 @@ package object attributes
   val TextLineThrought = new Toggle("TextLineThrought")
   /** May not supported by all generators. */
   val TextBlink = new Toggle("TextBlink")
+
+  implicit class RichDouble(val int: Double) {
+    def mm = Distance.millimeter(int)
+    def cm = Distance.centimeter(int)
+    def pt = Distance.point(int)
+  }
 }
 

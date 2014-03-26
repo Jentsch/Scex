@@ -5,5 +5,5 @@ trait Font {
   val bold = FontWeight > 700
   
   val FontFamily = new Attribute[String]("FontFamily")
-  val FontSize   = new Attribute[Int]("FontSize")
+  val FontSize   = new Attribute[Distance]("FontSize")
 }
