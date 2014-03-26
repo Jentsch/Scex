@@ -47,6 +47,8 @@ object HTML {
     }.tail
 
   private val exception = Map(
-    "TextColor" -> "color")
+    "TextColor" -> "color",
+    "SpaceAfter" -> "margin-bottom",
+    "SpaceBefore" -> "margin-top")
 }
 
