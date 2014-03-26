@@ -11,7 +11,8 @@ trait General extends Builder {
     TextAlign > "justify"
 
   def p = text &
-    Display > block
+    Display > block &
+    SpaceAfter > 6.pt
 
   def headline = text &
     FontFamily > "Verdana" &
@@ -32,7 +33,7 @@ trait General extends Builder {
 
   def author =
     headline &
-    PreText > "Autor: " &
+    PreText > "Autor: "
 
   def chapter = headline &
   	BreakBefore > page &
