@@ -43,6 +43,9 @@ trait General extends Builder {
 
   def section = headline
 
+  def subsection = headline &
+    FontSize > 21
+
   def em = text & bold
 
   def list = {
