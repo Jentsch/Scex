@@ -1,4 +1,4 @@
-﻿package org.scex
+package org.scex
 import scala.collection.generic.TraversableFactory
 
 /**
