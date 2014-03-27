@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Processor - org.scex.Processor</title>
-          <meta name="description" content="Processor - org.scex.Processor" />
-          <meta name="keywords" content="Processor org.scex.Processor" />
+          <title>Processor - Scex - org.scex.Processor</title>
+          <meta name="description" content="Processor - Scex - org.scex.Processor" />
+          <meta name="keywords" content="Processor Scex org.scex.Processor" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -40,12 +40,12 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A processor can modifiy annotated nodes.
-</p></div><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/Annotation.scala" target="_blank">Annotation.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Processor.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="attributes/package$$PreText$.html" class="extype" name="org.scex.attributes.PreText">PreText</a></div>
+          <div class="subClasses hiddenContent"><a href="attributes/Hyphen$.html" class="extype" name="org.scex.attributes.Hyphen">Hyphen</a>, <a href="attributes/package$$PreText$.html" class="extype" name="org.scex.attributes.PreText">PreText</a></div>
         </div></div>
         
 
@@ -103,8 +103,8 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="org.scex.Processor#process" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="process(value:T,node:org.scex.Element):org.scex.Element"></a>
+              <ol><li name="org.scex.Processor#process" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="process(value:T,element:org.scex.Element):org.scex.Element"></a>
       <a id="process(T,Element):Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -112,10 +112,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">process</span><span class="params">(<span name="value">value: <span class="extype" name="org.scex.Processor.T">T</span></span>, <span name="node">node: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
+        <span class="name">process</span><span class="params">(<span name="value">value: <span class="extype" name="org.scex.Processor.T">T</span></span>, <span name="element">element: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Process the assigned element.</p><div class="fullcomment"><div class="comment cmt"><p>Process the assigned element.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="org.scex">org.scex</a>] </dd></dl></div>
     </li></ol>
             </div>
 
@@ -200,19 +201,6 @@
       </h4>
       <p class="shortcomment cmt">Creates a modifier.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a modifier.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
-    </li><li name="org.scex.Processor#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(value:T,node:org.scex.Element):org.scex.Element"></a>
-      <a id="apply(T,Element):Element"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="value">value: <span class="extype" name="org.scex.Processor.T">T</span></span>, <span name="node">node: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -329,19 +317,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.scex.Processor#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="name:String"></a>
-      <a id="name:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.scex.Processor">Processor</a> → <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>

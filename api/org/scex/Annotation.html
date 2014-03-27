@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Annotation - org.scex.Annotation</title>
-          <meta name="description" content="Annotation - org.scex.Annotation" />
-          <meta name="keywords" content="Annotation org.scex.Annotation" />
+          <title>Annotation - Scex - org.scex.Annotation</title>
+          <meta name="description" content="Annotation - Scex - org.scex.Annotation" />
+          <meta name="keywords" content="Annotation Scex org.scex.Annotation" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -24,15 +24,15 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../lib/trait_big.png" />
+        <img src="../../lib/class_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="org">org</a>.<a href="package.html" class="extype" name="org.scex">scex</a></p>
         <h1>Annotation</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">trait</span>
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
         <span class="name">Annotation</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
@@ -40,12 +40,12 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Annotations for <code>Nodes</code>. Has two direct subclasses: Attribute and Processor.
-</p></div><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/Annotation.scala" target="_blank">Annotation.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="Attribute.html" class="extype" name="org.scex.Attribute">Attribute</a>, <a href="attributes/Font$FontWeight$.html" class="extype" name="org.scex.attributes.Font.FontWeight">FontWeight</a>, <a href="attributes/LineHeight$.html" class="extype" name="org.scex.attributes.LineHeight">LineHeight</a>, <a href="attributes/package$$PreText$.html" class="extype" name="org.scex.attributes.PreText">PreText</a>, <a href="Processor.html" class="extype" name="org.scex.Processor">Processor</a>, <a href="attributes/package$$Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a>, <a href="attributes/WhiteSpaceCollapse$.html" class="extype" name="org.scex.attributes.WhiteSpaceCollapse">WhiteSpaceCollapse</a></div>
+          <div class="subClasses hiddenContent"><a href="Attribute.html" class="extype" name="org.scex.Attribute">Attribute</a>, <a href="attributes/Font$FontWeight$.html" class="extype" name="org.scex.attributes.Font.FontWeight">FontWeight</a>, <a href="attributes/Hyphen$.html" class="extype" name="org.scex.attributes.Hyphen">Hyphen</a>, <a href="attributes/LineHeight$.html" class="extype" name="org.scex.attributes.LineHeight">LineHeight</a>, <a href="attributes/package$$PreText$.html" class="extype" name="org.scex.attributes.PreText">PreText</a>, <a href="Processor.html" class="extype" name="org.scex.Processor">Processor</a>, <a href="attributes/package$$Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a>, <a href="attributes/WhiteSpaceCollapse$.html" class="extype" name="org.scex.attributes.WhiteSpaceCollapse">WhiteSpaceCollapse</a></div>
         </div></div>
         
 
@@ -81,30 +81,30 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        
-
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="org.scex.Annotation#name" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="name:String"></a>
-      <a id="name:String"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.scex.Annotation#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(name:String):org.scex.Annotation[T]"></a>
+      <a id="&lt;init&gt;:Annotation[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">val</span>
+        <span class="modifier"></span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">Annotation</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>Name of this annotation</p></dd></dl></div>
     </li></ol>
             </div>
 
+        
+
+        
+
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -299,6 +299,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.scex.Annotation#name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="name:String"></a>
+      <a id="name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Name of this annotation</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
