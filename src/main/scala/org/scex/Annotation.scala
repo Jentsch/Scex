@@ -2,8 +2,13 @@ package org.scex
 
 /**
  * Annotations for `Nodes`. Has two direct subclasses: Attribute and Processor.
+ *
+ * @param name Name of this annotation
+ *
+ * @define name annotation
+ * @define Name Annotation
  */
-sealed trait Annotation[T] {
+sealed abstract class Annotation[T](val name: String) {
   /**
    * Creates a modifier.
    */
@@ -16,41 +21,43 @@ sealed trait Annotation[T] {
     else
       None
 
-  val name: String
-
   override def toString = name
 }
 
 /**
  * Attributes are passiv data for a generator, e.g. FontFamily.
  */
-class Attribute[T](val name: String) extends Annotation[T]
+class Attribute[T](name: String) extends Annotation[T](name)
 
 /**
  * A processor can modifiy annotated nodes.
  */
-abstract class Processor[T](val name: String) extends Annotation[T] {
-  def apply(value: T, node: Element) =
+abstract class Processor[T](name: String) extends Annotation[T](name) {
+  private[scex] def apply(value: T, node: Element) =
     process(value, node)
 
-  def process(value: T, node: Element): Element
+  /**
+   * Process the assigned element.
+   */
+  protected[scex] def process(value: T, element: Element): Element
 }
 
 /**
- * Inject usefull methods for Annotations of Booleans. Set 'Known Subclasses' below for
+ * Add unary + and - prefixes operators for boolean annotations. See 'Known Subclasses' below for
  * examples.
+ *
+ * @define name toggle
+ * @define Name Toggle
  */
 trait Toggle {
   this: Annotation[Boolean]=>
 
   /**
-   * Allows to write `+ Enable` instand of `Enable > true` where `Enable` is an
-   * Annotation.
+   * Allows to write `+ $Name` instand of `$Name > true`.
    */
   def unary_+ = this > true
   /**
-   * Allows to write `- Enable` instand of `Enable > false` where `Enable` is an
-   * Annotation.
+   * Allows to write `- $Name` instand of `$Name > false`.
    */
   def unary_- = this > false
 }
