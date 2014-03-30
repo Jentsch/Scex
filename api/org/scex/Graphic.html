@@ -1,18 +1,22 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
-          <title>Toggle - Scex - org.scex.attributes.Toggle</title>
-          <meta name="description" content="Toggle - Scex - org.scex.attributes.Toggle" />
-          <meta name="keywords" content="Toggle Scex org.scex.attributes.Toggle" />
+          <title>Graphic - Scex - org.scex.Graphic</title>
+          <meta name="description" content="Graphic - Scex - org.scex.Graphic" />
+          <meta name="keywords" content="Graphic Scex org.scex.Graphic" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../index.html';
-            var hash = 'org.scex.attributes.package$$Toggle';
+            var url = '../../index.html';
+            var hash = 'org.scex.Graphic';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -24,27 +28,24 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
-        <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.scex">scex</a>.<a href="package.html" class="extype" name="org.scex.attributes">attributes</a></p>
-        <h1>Toggle</h1>
+        <img src="../../lib/class_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="org">org</a>.<a href="package.html" class="extype" name="org.scex">scex</a></p>
+        <h1>Graphic</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Toggle</span><span class="result"> extends <span class="extype" name="org.scex.attributes.Attribute">Attribute</span>[<span class="extype" name="scala.Boolean">Boolean</span>] with <a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a></span>
+        <span class="name">Graphic</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/attributes/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/Node.scala" target="_blank">Node.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a>, <a href="../Attribute.html" class="extype" name="org.scex.Attribute">scex.Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="WhiteSpaceCollapse$.html" class="extype" name="org.scex.attributes.WhiteSpaceCollapse">WhiteSpaceCollapse</a></div>
+          <div class="superTypes hiddenContent"><a href="Node.html" class="extype" name="org.scex.Node">Node</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -62,7 +63,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.scex.attributes.Toggle"><span>Toggle</span></li><li class="in" name="org.scex.Toggle"><span>Toggle</span></li><li class="in" name="org.scex.Attribute"><span>Attribute</span></li><li class="in" name="org.scex.Annotation"><span>Annotation</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.scex.Graphic"><span>Graphic</span></li><li class="in" name="org.scex.Node"><span>Node</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -80,23 +81,7 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="org.scex.attributes.Toggle#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String):org.scex.attributes.package.Toggle"></a>
-      <a id="&lt;init&gt;:Toggle"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">Toggle</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
+        
 
         
 
@@ -105,19 +90,6 @@
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -129,7 +101,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -143,20 +115,21 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
+    </li><li name="org.scex.Node#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(that:org.scex.Node):org.scex.Element"></a>
+      <a id="+(Node):Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">final </span>
+        <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="that">that: <a href="Node.html" class="extype" name="org.scex.Node">Node</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Combines two Nodes into one.</p><div class="fullcomment"><div class="comment cmt"><p>Combines two Nodes into one.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Node.html" class="extype" name="org.scex.Node">Node</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -168,21 +141,22 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.scex.Annotation#&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&gt;(value:T):org.scex.Modifier[T]"></a>
-      <a id="&gt;(Boolean):Modifier[Boolean]"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.scex.Node#add" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="add(modifiers:org.scex.Modifiers):org.scex.Element"></a>
+      <a id="add(Modifiers):Element"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+        <span class="name">add</span><span class="params">(<span name="modifiers">modifiers: <a href="Modifiers.html" class="extype" name="org.scex.Modifiers">Modifiers</a></span>)</span><span class="result">: <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Creates a modifier.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a modifier.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
+      <p class="shortcomment cmt">Creates a new Element by adding attributes to this Node.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new Element by adding attributes to this Node. If this node isn't an element, it will be
+wrapped by a element node with the modifiers.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Node.html" class="extype" name="org.scex.Node">Node</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -208,7 +182,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
@@ -253,7 +227,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
@@ -351,7 +325,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.scex.Annotation#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
       <h4 class="signature">
@@ -360,51 +334,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a> → AnyRef → Any</dd></dl></div>
-    </li><li name="org.scex.Annotation#unapply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unapply(modifier:org.scex.Modifier[_]):Option[T]"></a>
-      <a id="unapply(Modifier[_]):Option[Boolean]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">unapply</span><span class="params">(<span name="modifier">modifier: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
-    </li><li name="org.scex.Toggle#unary_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unary_+:org.scex.Modifier[Boolean]"></a>
-      <a id="unary_+:Modifier[Boolean]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: unary_$plus" class="name">unary_+</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Allows to write <code>+ Toggle</code> instand of <code>Toggle &gt; true</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>+ Toggle</code> instand of <code>Toggle &gt; true</code>.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Toggle.html" class="extype" name="org.scex.Toggle">Toggle</a></dd></dl></div>
-    </li><li name="org.scex.Toggle#unary_-" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="unary_-:org.scex.Modifier[Boolean]"></a>
-      <a id="unary_-:Modifier[Boolean]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Allows to write <code>- Toggle</code> instand of <code>Toggle &gt; false</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>- Toggle</code> instand of <code>Toggle &gt; false</code>.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Toggle.html" class="extype" name="org.scex.Toggle">Toggle</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -471,12 +404,8 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.scex.Toggle">
-              <h3>Inherited from <a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a></h3>
-            </div><div class="parent" name="org.scex.Attribute">
-              <h3>Inherited from <a href="../Attribute.html" class="extype" name="org.scex.Attribute">scex.Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</h3>
-            </div><div class="parent" name="org.scex.Annotation">
-              <h3>Inherited from <a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</h3>
+        <div class="parent" name="org.scex.Node">
+              <h3>Inherited from <a href="Node.html" class="extype" name="org.scex.Node">Node</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
@@ -497,6 +426,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>

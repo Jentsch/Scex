@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>Modifiers - Scex - org.scex.Modifiers</title>
@@ -9,6 +8,11 @@
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -43,11 +47,11 @@
 this way.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/Modifiers.scala" target="_blank">Modifiers.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.IterableLike">IterableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.collection.GenIterable">GenIterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenIterableLike">GenIterableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.Traversable">Traversable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenTraversable">GenTraversable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>], <span class="extype" name="scala.collection.TraversableLike">TraversableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.GenTraversableLike">GenTraversableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.Parallelizable">Parallelizable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.parallel.ParIterable">ParIterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.TraversableOnce">TraversableOnce</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenTraversableOnce">GenTraversableOnce</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.generic.FilterMonadic">FilterMonadic</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.IterableLike">IterableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.collection.GenIterable">GenIterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenIterableLike">GenIterableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.Traversable">Traversable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenTraversable">GenTraversable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>], <span class="extype" name="scala.collection.TraversableLike">TraversableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.GenTraversableLike">GenTraversableLike</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.Parallelizable">Parallelizable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.parallel.ParIterable">ParIterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.TraversableOnce">TraversableOnce</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.GenTraversableOnce">GenTraversableOnce</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]], <span class="extype" name="scala.collection.generic.FilterMonadic">FilterMonadic</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]], <span class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], Iterable[org.scex.Modifier[_]] @scala.annotation.unchecked.uncheckedVariance], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a></div>
-        </div></div>
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a></div>
+          </div></div>
         
 
       <div id="mbrsel">
@@ -98,7 +102,7 @@ this way.
         <span class="name">Self</span><span class="result"> = <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>TraversableLike</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[this] </dd><dt>Definition Classes</dt><dd>TraversableLike</dd></dl></div>
     </li><li name="scala.collection.TraversableLike.WithFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="WithFilterextendsFilterMonadic[A,Repr]"></a>
       <a id="WithFilter:WithFilter"></a>
@@ -136,19 +140,6 @@ this way.
         <div id="values" class="values members">
               <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -160,7 +151,7 @@ this way.
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -266,19 +257,6 @@ this way.
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableOnce → GenTraversableOnce</dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -290,7 +268,7 @@ this way.
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.collection.TraversableOnce#addString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="addString(b:&lt;?&gt;):StringBuilder"></a>
       <a id="addString(StringBuilder):StringBuilder"></a>
@@ -331,15 +309,15 @@ this way.
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableOnce</dd></dl></div>
     </li><li name="scala.collection.TraversableOnce#aggregate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="aggregate[B](z:B)(seqop:(B,A)=&gt;B,combop:(B,B)=&gt;B):B"></a>
-      <a id="aggregate[B](B)((B,Modifier[_])⇒B,(B,B)⇒B):B"></a>
+      <a id="aggregate[B](z:=&gt;B)(seqop:(B,A)=&gt;B,combop:(B,B)=&gt;B):B"></a>
+      <a id="aggregate[B](⇒B)((B,Modifier[_])⇒B,(B,B)⇒B):B"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aggregate</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="z">z: <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>)</span><span class="params">(<span name="seqop">seqop: (<span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>, <a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]) ⇒ <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>, <span name="combop">combop: (<span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>, <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>) ⇒ <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>
+        <span class="name">aggregate</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="z">z: ⇒ <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>)</span><span class="params">(<span name="seqop">seqop: (<span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>, <a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]) ⇒ <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>, <span name="combop">combop: (<span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>, <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span>) ⇒ <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.TraversableOnce.aggregate.B">B</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableOnce → GenTraversableOnce</dd></dl></div>
@@ -1683,7 +1661,16 @@ this way.
         <span class="name">toIterator</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>IterableLike → TraversableLike → GenTraversableOnce</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>IterableLike → TraversableLike → GenTraversableOnce</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecatedOverriding</span><span class="args">(<span>
+      
+      <span class="defval" name="&quot;toIterator should stay consistent with iterator for all Iterables: override iterator instead.&quot;">...</span>
+    </span>, <span>
+      
+      <span class="symbol">&quot;2.11.0&quot;</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.collection.TraversableOnce#toList" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toList:List[A]"></a>
       <a id="toList:List[Modifier[_]]"></a>
@@ -1774,7 +1761,16 @@ this way.
         <span class="name">toTraversable</span><span class="result">: <span class="extype" name="scala.collection.Traversable">Traversable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableLike → TraversableOnce → GenTraversableOnce</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TraversableLike → TraversableOnce → GenTraversableOnce</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecatedOverriding</span><span class="args">(<span>
+      
+      <span class="defval" name="&quot;Enforce contract of toTraversable that if it is Traversable it returns itself.&quot;">...</span>
+    </span>, <span>
+      
+      <span class="symbol">&quot;2.11.0&quot;</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.collection.TraversableOnce#toVector" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toVector:Vector[A]"></a>
       <a id="toVector:Vector[Modifier[_]]"></a>
@@ -1983,26 +1979,7 @@ this way.
 
         
 
-        <div id="values" class="values members">
-              <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.collection.GenTraversableOnce#/:\" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="/:\[A1&lt;:&lt;?&gt;](z:&lt;?&gt;)(op:&lt;?&gt;):A1"></a>
-      <a id="/:\[A1&gt;:Modifier[_]](A1)((A1,A1)⇒A1):A1"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $div$colon$bslash. Deprecated: (Since version 2.10.0) use fold instead" class="name deprecated">/:\</span><span class="tparams">[<span name="A1">A1 &gt;: <a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]</span>]</span><span class="params">(<span name="z">z: <span class="extype" name="scala.collection.GenTraversableOnce./:\.A1">A1</span></span>)</span><span class="params">(<span name="op">op: (<span class="extype" name="scala.collection.GenTraversableOnce./:\.A1">A1</span>, <span class="extype" name="scala.collection.GenTraversableOnce./:\.A1">A1</span>) ⇒ <span class="extype" name="scala.collection.GenTraversableOnce./:\.A1">A1</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.GenTraversableOnce./:\.A1">A1</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GenTraversableOnce</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> use fold instead</p></dd></dl></div>
-    </li></ol>
-            </div>
+        
         </div>
 
         <div id="inheritedMembers">
@@ -2035,7 +2012,7 @@ this way.
             </div><div class="parent" name="scala.collection.generic.FilterMonadic">
               <h3>Inherited from <span class="extype" name="scala.collection.generic.FilterMonadic">FilterMonadic</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]]</h3>
             </div><div class="parent" name="scala.collection.generic.HasNewBuilder">
-              <h3>Inherited from <span class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]]</h3>
+              <h3>Inherited from <span class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_], Iterable[org.scex.Modifier[_]] @scala.annotation.unchecked.uncheckedVariance]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
@@ -2056,6 +2033,7 @@ this way.
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>

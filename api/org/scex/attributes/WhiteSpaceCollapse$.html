@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>WhiteSpaceCollapse - Scex - org.scex.attributes.WhiteSpaceCollapse</title>
@@ -9,6 +8,11 @@
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
@@ -35,13 +39,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">WhiteSpaceCollapse</span><span class="result"> extends <a href="package$$Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a></span>
+        <span class="name">WhiteSpaceCollapse</span><span class="result"> extends <a href="Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>En- or disables the collapsing of white spaces.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/Jentsch/Scex/blob/master/src/main/scala/org/scex/attributes/WhiteSpaceCollapse.scala" target="_blank">WhiteSpaceCollapse.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="package$$Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a>, <a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a>, <a href="../Attribute.html" class="extype" name="org.scex.Attribute">scex.Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a>, <a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a>, <a href="../Attribute.html" class="extype" name="org.scex.Attribute">scex.Attribute</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="scala.Boolean">Boolean</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -86,19 +90,6 @@
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -110,7 +101,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -125,19 +116,6 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -149,7 +127,7 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.scex.Annotation#&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&gt;(value:T):org.scex.Modifier[T]"></a>
       <a id="&gt;(Boolean):Modifier[Boolean]"></a>
@@ -292,7 +270,7 @@
         <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
+      <p class="shortcomment cmt">Name of this annotation</p><div class="fullcomment"><div class="comment cmt"><p>Name of this annotation</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -383,7 +361,7 @@
         <span title="gt4s: unary_$plus" class="name">unary_+</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Allows to write <code>+ WhiteSpaceCollapse</code> instand of <code>WhiteSpaceCollapse &gt; true</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>+ WhiteSpaceCollapse</code> instand of <code>WhiteSpaceCollapse &gt; true</code>.
+      <p class="shortcomment cmt">Allows to write <code>+ Toggle</code> instand of <code>Toggle &gt; true</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>+ Toggle</code> instand of <code>Toggle &gt; true</code>.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Toggle.html" class="extype" name="org.scex.Toggle">Toggle</a></dd></dl></div>
     </li><li name="org.scex.Toggle#unary_-" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="unary_-:org.scex.Modifier[Boolean]"></a>
@@ -397,7 +375,7 @@
         <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="result">: <a href="../Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Allows to write <code>- WhiteSpaceCollapse</code> instand of <code>WhiteSpaceCollapse &gt; false</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>- WhiteSpaceCollapse</code> instand of <code>WhiteSpaceCollapse &gt; false</code>.
+      <p class="shortcomment cmt">Allows to write <code>- Toggle</code> instand of <code>Toggle &gt; false</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Allows to write <code>- Toggle</code> instand of <code>Toggle &gt; false</code>.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Toggle.html" class="extype" name="org.scex.Toggle">Toggle</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
@@ -466,7 +444,7 @@
 
         <div id="inheritedMembers">
         <div class="parent" name="org.scex.attributes.Toggle">
-              <h3>Inherited from <a href="package$$Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a></h3>
+              <h3>Inherited from <a href="Toggle.html" class="extype" name="org.scex.attributes.Toggle">Toggle</a></h3>
             </div><div class="parent" name="org.scex.Toggle">
               <h3>Inherited from <a href="../Toggle.html" class="extype" name="org.scex.Toggle">scex.Toggle</a></h3>
             </div><div class="parent" name="org.scex.Attribute">
@@ -493,6 +471,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>

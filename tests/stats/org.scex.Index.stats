@@ -1,0 +1,15 @@
+<org.scex.Index-results timestamp="1396215803355"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-682587753"><stats pending="1" time="65" expectations="1" examples="1"></stats></result>
+</org.scex.Index-results>
+<org.scex.Index-stats timestamp="1396215803359"><stats pending="1" time="118" expectations="1" examples="1"></stats></org.scex.Index-stats>
+<org.scex.Index-results timestamp="1396216011903"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-682587753"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+</org.scex.Index-results>
+<org.scex.Index-stats timestamp="1396216011916"><stats pending="1" time="22" expectations="1" examples="1"></stats></org.scex.Index-stats>
+<org.scex.Index-results timestamp="1396216114856"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-682587753"><stats pending="1" time="65" expectations="1" examples="1"></stats></result>
+</org.scex.Index-results>
+<org.scex.Index-stats timestamp="1396216114867"><stats pending="1" time="129" expectations="1" examples="1"></stats></org.scex.Index-stats>
+<org.scex.Index-results timestamp="1396216171389"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-682587753"><stats pending="1" time="40" expectations="1" examples="1"></stats></result>
+</org.scex.Index-results>
+<org.scex.Index-stats timestamp="1396216171417"><stats pending="1" time="107" expectations="1" examples="1"></stats></org.scex.Index-stats>
+<org.scex.Index-results timestamp="1396216230549"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-682587753"><stats pending="1" time="54" expectations="1" examples="1"></stats></result>
+</org.scex.Index-results>
+<org.scex.Index-stats timestamp="1396216230561"><stats pending="1" time="105" expectations="1" examples="1"></stats></org.scex.Index-stats>
