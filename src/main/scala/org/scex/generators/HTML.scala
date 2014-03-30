@@ -23,6 +23,8 @@ object HTML {
       XText(text)
     case Element(ch, atts) =>
       <div style={style(atts)}>{ch.map(content(_))}</div>
+    case unknow =>
+      ???
   }
 
   private def style(atts: Modifiers) =

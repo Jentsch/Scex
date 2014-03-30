@@ -12,23 +12,23 @@ trait Builder extends Element {
   private var buffer = List.empty[Node]
   lazy val children = buffer.map {
     case child: Element =>
-      child.attributes.foldLeft(Element(child.children, Modifiers.empty): Element) {
+      child.modifiers.foldLeft(Element(child.children, Modifiers.empty): Element) {
         case (elem:Element, bind @ Modifier(_: Attribute[_], _)) =>
-          Element(elem.children, elem.attributes & bind)
+          Element(elem.children, elem.modifiers & bind)
         case (elem:Element, Modifier(proc: Processor[_], value)) =>
           proc(value, elem)
       }
-    case text: Text => text
+    case node => node
   }
 
-  val attributes = Modifiers.empty
+  val modifiers = Modifiers.empty
 
   private[scex] def register(n: Node) {
     buffer = buffer :+ n
   }
 
   /**
-   * Used to allow Modifiers as String Interpolator
+   * Used to allow Modifiers as String Interpolator. Don't do this at home kids.
    */
   implicit protected def toStringContext(sc: StringContext): this.type = {
     stringContext = sc

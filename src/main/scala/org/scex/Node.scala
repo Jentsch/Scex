@@ -2,54 +2,47 @@ package org.scex
 
 sealed trait Node {
   /**
-   * Creates a new Element by adding attributes to this Node.
+   * Creates a new Element by adding attributes to this Node. If this node isn't an element, it will be
+   * wrapped by a element node with the modifiers.
    */
-  def add(modifiers: Modifiers): Element
+  final def add(modifiers: Modifiers): Element = this match {
+    case Element(children, modifiersOld) => Element(children, modifiersOld & modifiers)
+    case node => Element(node :: Nil, modifiers)
+  }
 
   /**
    * Combines two Nodes into one.
    */
-  def +(that: Node): Element
+  def +(that: Node): Element =
+    Element(this :: that :: Nil)
 }
 
 /**
  * Text elements contains only one string and have no attributes.
  */
 final case class Text(val text: String) extends Node {
-  def add(modifiers: Modifiers) =
-    Element(List(this), modifiers)
-  def +(that: Node) =
-    Element(List(this, that), Modifiers.empty)
 }
 
+// TODO: need concept for external sources
+final class Graphic private() extends Node
+
 trait Element extends Node {
-  def attributes: Modifiers
+  def modifiers: Modifiers
   def children: Seq[Node]
 
-  def add(modifiers: Modifiers) = Element(children, attributes & modifiers)
-
-  def +(that: Node) = that match {
-    case text: Text if (this.attributes.isEmpty) => Element(children :+ text, attributes)
-    case that: Element if (this.attributes.isEmpty && that.attributes.isEmpty) =>
-      Element(this.children ++ that.children, Modifiers.empty)
-      case that => Element(List(this, that), Modifiers.empty)
-  }
-
   override def toString =
-    attributes.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
-
-  /**
-   * Creates a new element.
-   */
-  def update(modifiers: Modifiers = attributes, children: Seq[Node] = children) =
-    Element(children, modifiers)
+    modifiers.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
 }
 
 object Element {
-  def apply(child: Seq[Node], attribute: Modifiers = Modifiers.empty): Element = new Element {
-    val children = child
-    val attributes = attribute
+  def apply(children: Seq[Node], modifiers: Modifiers = Modifiers.empty): Element = {
+    val c = children
+    val m = modifiers
+    new Element {
+      val children = c
+      val modifiers = m
+    }
   }
 
-  def unapply(element: Element) = Some((element.children, element.attributes))
+  def unapply(element: Element) = Some((element.children, element.modifiers))
 }

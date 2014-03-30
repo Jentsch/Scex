@@ -11,18 +11,16 @@ package object attributes
 
   private[attributes] type Attribute[T] = org.scex.Attribute[T]
 
-  class Toggle(name: String)
-    extends Attribute[Boolean](name)
-    with org.scex.Toggle
-
   object PreText extends Processor[String]("PreText") {
-    private def helper(value: String, elem: Node): Node = elem match {
+    private def helper(value: String, node: Node): Node = node match {
       case Element(first :: others, attr) =>
-      Element(helper(value, first) :: others, attr)
+        Element(helper(value, first) :: others, attr)
       case Element(none, attr) =>
         Element(Text(value) +: none, attr)
       case Text(text) =>
         Text(value+text)
+      case node =>
+        node
     }
 
     def process(value: String, elem: Element) =
@@ -30,7 +28,7 @@ package object attributes
         case result: Element =>
           result
         case _ =>
-          throw new RuntimeException
+          ???
       }
 
 	}

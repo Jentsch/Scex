@@ -4,13 +4,15 @@ import org.scex._
 
 object Hyphen extends Processor[Lang]("hypen") {
   def process(lang: Lang, elem: Element): Element =
-    Element(elem.children map (process(lang, _)), elem.attributes)
+    Element(elem.children map (process(lang, _)), elem.modifiers)
 
   def process(lang: Lang, node: Node): Node = node match {
     case elem: Element =>
       process(lang, elem)
     case Text(text) => 
       Text(withHypen(text, lang))
+    case node =>
+      node
   }
 
   // TODO: Create a version with more performance

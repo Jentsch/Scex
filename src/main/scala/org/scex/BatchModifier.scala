@@ -45,7 +45,7 @@ object BatchModifiers {
     new BatchModifiers(major, minor)
 
   class BatchElement(
-      override val attributes: Modifiers,
+      override val modifiers: Modifiers,
       val minor: Modifiers)
     extends Element with Builder {
 
