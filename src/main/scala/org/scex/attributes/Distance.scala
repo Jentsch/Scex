@@ -3,7 +3,6 @@ package org.scex.attributes
 final class Distance private[Distance] (val millimeter: Double) extends AnyVal with Ordered[Distance] {
   override def toString = millimeter + "mm"
 
-  def meter = millimeter * 0.001
   def centimeter = millimeter * 0.1
   // Based upon http://www.einheitenumrechner.mobi/ehu.php
   def point = millimeter * 2.6591145149
@@ -23,7 +22,6 @@ object Distance {
 
   def millimeter(n: Double) = Distance(n)
   def centimeter(n: Double) = Distance(n / 1.mm.centimeter)
-  def meter(n: Double) = Distance(n / 1.mm.meter)
   def point(n: Double) = Distance(n / 1.mm.point)
 
   implicit object Ordering extends math.Ordering[Distance] {
