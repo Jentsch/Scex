@@ -42,22 +42,3 @@ abstract class Processor[T](name: String) extends Annotation[T](name) {
   protected[scex] def process(value: T, element: Element): Element
 }
 
-/**
- * Add unary + and - prefixes operators for boolean annotations. See 'Known Subclasses' below for
- * examples.
- *
- * @define name toggle
- * @define Name Toggle
- */
-trait Toggle {
-  this: Annotation[Boolean]=>
-
-  /**
-   * Allows to write `+ $Name` instand of `$Name > true`.
-   */
-  def unary_+ = this > true
-  /**
-   * Allows to write `- $Name` instand of `$Name > false`.
-   */
-  def unary_- = this > false
-}
