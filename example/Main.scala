@@ -7,7 +7,8 @@ import org.scex.templates._
 object Main extends App {
   private val examples = Map(
     "HTML" -> HTML,
-    "PDF" -> PDF)
+    "PDF" -> PDF,
+    "Welcome" -> Welcome)
 
   args.headOption getOrElse("HTML") match {
     case "all" =>

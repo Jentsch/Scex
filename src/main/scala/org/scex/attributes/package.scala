@@ -1,6 +1,7 @@
 package org.scex
 
 import org.scex._
+import java.net.URL
 
 package object attributes
 	extends Breaks
@@ -35,6 +36,11 @@ package object attributes
       }
 
 	}
+
+  object Link extends Attribute[URL]("Link") {
+    def > (str: String): Modifier[URL] =
+      this > new URL(str)
+  }
 
   val TextAlign = new Attribute[String]("TextAlign")
 

@@ -52,7 +52,15 @@ trait Modifiers extends Iterable[Modifier[_]] {
 
   def apply(params: Any*)(implicit b: Builder) = {
     val sc = stringContext getOrElse sys.error("No StringContext given")
-    this | sc.s(params : _*)
+    val head: Text = sc.parts.head
+
+    val tail: Seq[Node] = params zip sc.parts.tail flatMap {
+      case (m: Modifiers, text) => Seq(Text(text) add m)
+      case (n: Node, text) => Seq(n, Text(text))
+      case (any, text) => Seq(Text(any.toString), Text(text))
+    }
+
+    this | Element(head +: tail)
   }
 }
 

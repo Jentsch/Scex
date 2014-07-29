@@ -1,6 +1,7 @@
 package org.scex.generators
 
 import org.scex._
+import org.scex.attributes._
 
 import xml.{Text => XText}
 import xml.{Node => XNode}
@@ -21,19 +22,25 @@ object HTML {
   private def content(node: Node): XNode = node match {
     case Text(text) =>
       XText(text)
+
+    case Element(ch, atts) if atts.get(Display).map(_ == block).getOrElse(false) =>
+      <div style={style(atts)}>{ch map content}</div>
+
+    case Element(ch, atts) if atts.get(Link).isDefined =>
+      <a style={style(atts)} href={atts(Link).toString}>{ch map content}</a>
+
     case Element(ch, atts) =>
-      <div style={style(atts)}>{ch.map(content(_))}</div>
+      <span style={style(atts)}>{ch map content}</span>
+
     case unknow =>
       ???
   }
 
   private def style(atts: Modifiers) =
-    atts.
-      map{
-        case Modifier(name, value) =>
+    atts.collect {
+        case Modifier(name, value) if name != Link =>
           toCSS(name) + ": " +value.toString
-      }.
-      mkString("; ")
+    }.mkString("; ")
 
   private def toCSS(anno: Annotation[_]) = {
     val name = anno.name
