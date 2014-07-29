@@ -9,6 +9,9 @@ package object attributes
 	with Font
 	with Spaces {
 
+  /**
+   * Imports the Attribute type into this package.
+   */
   private[attributes] type Attribute[T] = org.scex.Attribute[T]
 
   object PreText extends Processor[String]("PreText") {
@@ -37,7 +40,6 @@ package object attributes
 
   val TextColor = new Attribute[Color]("TextColor")
 
-  final class TextTransform private[attributes](val name: String)
   /**
    *  Puts the first character of each word in uppercase.
    */
@@ -60,5 +62,9 @@ package object attributes
     def cm = Distance.centimeter(int)
     def pt = Distance.point(int)
   }
+}
+
+package attributes {
+  final class TextTransform private[attributes](val name: String)
 }
 
