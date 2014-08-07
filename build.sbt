@@ -21,8 +21,6 @@ libraryDependencies += "org.pegdown" % "pegdown" % "1.2.1" % "test"
 
 scalacOptions in Test += "-Yrangepos"
 
-testOptions in Test += Tests.Argument("html")
-
 // API
 scalacOptions in (Compile, doc) ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blob/master€{FILE_PATH}.scala")
 

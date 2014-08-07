@@ -1,5 +1,6 @@
 Scex
 ====
+[![Build Status](https://travis-ci.org/Jentsch/Scex.svg?branch=master)](https://travis-ci.org/Jentsch/Scex)
 
 An inner DSL in Scala to write documents.
 
