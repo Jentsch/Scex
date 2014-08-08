@@ -38,13 +38,15 @@ object HTML {
 
   private def style(atts: Modifiers) =
     atts.collect {
+        case Modifier(TextUnderline, true) =>
+          "text-decoration: underline"
         case Modifier(name, value) if name != Link =>
           toCSS(name) + ": " +value.toString
     }.mkString("; ")
 
   private def toCSS(anno: Annotation[_]) = {
     val name = anno.name
-    exception.getOrElse(name, genericToCSS(name))
+    nameTranslation.getOrElse(name, genericToCSS(name))
   }
 
   private def genericToCSS(name: String) =
@@ -55,7 +57,7 @@ object HTML {
         r + lower
     }.tail
 
-  private val exception = Map(
+  private val nameTranslation = Map(
     "TextColor" -> "color",
     "SpaceAfter" -> "margin-bottom",
     "SpaceBefore" -> "margin-top")

@@ -60,12 +60,13 @@ object HTML extends templates.Presentation with templates.Run {
 
   p"Refrectoring is possible (renember those CTRL+SHIFT+R feature?)"
 
+  p"Auto format"
+
   section"What is open to do?"
 
   val todo = List(
 	"More attributes",
 	"Implementing good and usefull templates, like DIN-A4, sections and so on...",
-	"Implement inline formating, for that see String INterpolation in Scala 2.10",
 	"Implement document reflections (current task)",
 	"Find a way to add include object like images and charts")
 
