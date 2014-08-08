@@ -27,7 +27,7 @@ trait Modifiers extends Iterable[Modifier[_]] {
 	
   override def filter(condition: Modifier[_] => Boolean) =
     Modifiers(modifiers filter condition)
- 
+
   override def filterNot(condition: Modifier[_] => Boolean) =
     Modifiers(modifiers filterNot condition)
 
@@ -62,9 +62,29 @@ trait Modifiers extends Iterable[Modifier[_]] {
     val head: Text = sc.parts.head
 
     val tail: Seq[Node] = params zip sc.parts.tail flatMap {
-      case (m: Modifiers, text) => Seq(Text(text) add m)
-      case (n: Node, text) => Seq(n, Text(text))
-      case (any, text) => Seq(Text(any.toString), Text(text))
+      // finde modifers with append a append group
+      case (m: Modifiers, text)
+          if text.dropWhile(_.isWhitespace).headOption == Some('{') &&
+             text.contains('}') =>
+        val formated =
+          text.dropWhile(_.isWhitespace).tail.takeWhile(_ != '}')
+        val unaffected =
+          text.dropWhile(_ != '}').tail
+        if (unaffected.isEmpty)
+          Seq(Text(formated) add m)
+        else
+          Seq(Text(formated) add m, Text(unaffected))
+      case (m: Modifiers, text) =>
+        val (formated, unaffected) =
+          text.dropWhile(_.isWhitespace).span(! _.isWhitespace)
+        if (unaffected.isEmpty)
+          Seq(Text(formated) add m)
+        else
+          Seq(Text(formated) add m, Text(unaffected))
+      case (n: Node, text) =>
+        Seq(n, Text(text))
+      case (any, text) =>
+        Seq(Text(any.toString), Text(text))
     }
 
     this | Element(head +: tail)
