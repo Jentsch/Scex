@@ -1,6 +1,6 @@
 package org.scex
 
-sealed trait Node {
+sealed trait Node extends Inlineable {
   /**
    * Creates a new Element by adding attributes to this Node. If this node isn't an element, it will be
    * wrapped by a element node with the modifiers.

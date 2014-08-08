@@ -5,7 +5,7 @@ import scala.collection.generic.TraversableFactory
  * A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
  * this way.
  */
-trait Modifiers extends Iterable[Modifier[_]] {
+trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
 
   protected val modifiers: Seq[Modifier[_]]
 
@@ -57,7 +57,7 @@ trait Modifiers extends Iterable[Modifier[_]] {
    * Used for the string inpolation feature.
    */
   //TODO: refere to the documentation about the string interpolation
-  def apply(params: Any*)(implicit b: Builder): Element = {
+  def apply(params: Inlineable*)(implicit b: Builder): Element = {
     val sc = stringContext getOrElse sys.error("No StringContext given")
     val head: Text = sc.parts.head
 
@@ -87,7 +87,13 @@ trait Modifiers extends Iterable[Modifier[_]] {
         Seq(Text(any.toString), Text(text))
     }
 
-    this | Element(head +: tail)
+    val list = (head +: tail).foldRight[List[Node]](Nil){
+      case (Text(""), ls) => ls
+      case (Text(t1), Text(t2) :: ls) => Text(t1 + t2) :: ls
+      case (h, ls) => h :: ls
+    }
+
+    this | Element(list)
   }
 }
 
