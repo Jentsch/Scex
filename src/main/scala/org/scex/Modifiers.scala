@@ -37,8 +37,11 @@ trait Modifiers extends Iterable[Modifier[_]] {
   /**
    * Binds attributes to a node a append the node to a builder.
    */
-  def | (node: Node)(implicit parent: Builder) =
-    parent.register(node add this)
+  def | (node: Node)(implicit parent: Builder): Element = {
+    val result = node add this
+    parent register result
+    result
+  }
 
   def asMinorOf (that: Modifiers) =
     BatchModifiers(that, this)
@@ -50,7 +53,11 @@ trait Modifiers extends Iterable[Modifier[_]] {
 
   override def toString = modifiers.mkString("Modifiers(", ", ",")")
 
-  def apply(params: Any*)(implicit b: Builder) = {
+  /**
+   * Used for the string inpolation feature.
+   */
+  //TODO: refere to the documentation about the string interpolation
+  def apply(params: Any*)(implicit b: Builder): Element = {
     val sc = stringContext getOrElse sys.error("No StringContext given")
     val head: Text = sc.parts.head
 

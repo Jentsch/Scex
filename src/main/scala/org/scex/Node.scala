@@ -6,6 +6,7 @@ sealed trait Node {
    * wrapped by a element node with the modifiers.
    */
   final def add(modifiers: Modifiers): Element = this match {
+    // An optimzation
     case Element(children, modifiersOld) => Element(children, modifiersOld & modifiers)
     case node => Element(node :: Nil, modifiers)
   }
@@ -15,23 +16,30 @@ sealed trait Node {
    */
   def +(that: Node): Element =
     Element(this :: that :: Nil)
+
+  def toText: String
 }
 
 /**
  * Text elements contains only one string and have no attributes.
  */
 final case class Text(val text: String) extends Node {
+  def toText: String = text
 }
 
 // TODO: need concept for external sources
-final class Graphic private() extends Node
+final class Graphic private() extends Node {
+  def toText: String = ""
+}
 
 trait Element extends Node {
   def modifiers: Modifiers
   def children: Seq[Node]
 
-  override def toString =
+  override def toString: String =
     modifiers.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
+
+  def toText: String = children.map(_.toText).mkString(" ")
 }
 
 object Element {
