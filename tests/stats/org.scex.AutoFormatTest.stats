@@ -1,0 +1,43 @@
+<org.scex.AutoFormatTest-results timestamp="1407505388883"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="234" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="182" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407505388892"><stats time="58" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407505533600"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="28" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="22" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407505533616"><stats time="4" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506137122"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="25" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="17" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506137134"><stats time="9" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506160073"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="72" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="50" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506160087"><stats time="12" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506191883"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="267" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="205" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506191902"><stats time="38" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506358637"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="220" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="157" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506358644"><stats time="48" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506380116"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="392116327"><stats time="83" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="82" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506380137"><stats time="1" expectations="2" failures="1" errors="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506458812"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="16" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506458822"><stats time="3" expectations="2" errors="1" successes="1" examples="2"><trend><stats time="3" failures="-1" successes="1"></stats></trend></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506474031"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="202" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506474042"><stats time="43" expectations="2" errors="1" successes="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-results timestamp="1407506481010"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-1683676960"><stats time="155" expectations="1" errors="1" examples="1"></stats></result>
+</org.scex.AutoFormatTest-results>
+<org.scex.AutoFormatTest-stats timestamp="1407506481018"><stats time="44" expectations="2" errors="1" successes="1" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407506536249"><stats time="38" expectations="2" successes="2" examples="2"><trend><stats time="38" errors="-1" successes="1"></stats></trend></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407506622806"><stats time="37" expectations="2" successes="2" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407510504324"><stats time="21" expectations="2" successes="2" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407510603364"><stats time="47" expectations="2" successes="2" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407510682711"><stats time="129" expectations="2" successes="2" examples="2"></stats></org.scex.AutoFormatTest-stats>
+<org.scex.AutoFormatTest-stats timestamp="1407510711889"><stats time="6" expectations="2" successes="2" examples="2"></stats></org.scex.AutoFormatTest-stats>

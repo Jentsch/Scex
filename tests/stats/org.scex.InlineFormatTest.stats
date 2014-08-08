@@ -1,0 +1,26 @@
+<org.scex.InlineFormatTest-results timestamp="1407499787720"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-590166991"><stats time="176" expectations="1" failures="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:110)" id="-174954289"><stats time="13" expectations="1" failures="1" examples="1"></stats></result>
+</org.scex.InlineFormatTest-results>
+<org.scex.InlineFormatTest-stats timestamp="1407499787757"><stats time="90" expectations="3" failures="2" successes="1" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407500012273"><stats time="3" expectations="3" successes="3" examples="3"><trend><stats time="3" failures="-2" successes="2"></stats></trend></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407502425215"><stats time="45" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407502638029"><stats time="45" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407502861051"><stats time="35" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407502897155"><stats time="35" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407502928461"><stats time="35" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407503590853"><stats time="9" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407503748931"><stats time="38" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407503766511"><stats time="86" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407504044672"><stats time="17" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407505388891"><stats time="46" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407505533509"><stats time="17" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506136984"><stats time="56" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506160352"><stats time="18" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506192058"><stats time="1" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506358643"><stats time="33" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506380125"><stats time="1" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407506458488"><stats time="4" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407510502598"><stats time="125" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407510610512"><stats time="3" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407510682711"><stats time="133" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>
+<org.scex.InlineFormatTest-stats timestamp="1407510712204"><stats time="4" expectations="3" successes="3" examples="3"></stats></org.scex.InlineFormatTest-stats>

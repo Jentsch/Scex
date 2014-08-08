@@ -30,7 +30,11 @@
       <div id="definition">
         <img src="../../lib/package_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="org">org</a></p>
-        <h1>scex</h1>
+        <h1>scex</h1> <span class="permalink">
+      <a href="../../index.html#org.scex.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -86,7 +90,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="org.scex.Annotation" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="org.scex.Annotation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Annotation[T]extendsAnyRef"></a>
       <a id="Annotation[T]:Annotation[T]"></a>
       <h4 class="signature">
@@ -97,9 +101,14 @@
       <span class="symbol">
         <a href="Annotation.html"><span class="name">Annotation</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Annotations for <code>Nodes</code>.</p>
-    </li><li name="org.scex.Attribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Annotation[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Annotations for <code>Nodes</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Annotations for <code>Nodes</code>. Has two direct subclasses: Attribute and Processor.
+</p></div></div>
+    </li><li name="org.scex.Attribute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Attribute[T]extendsAnnotation[T]"></a>
       <a id="Attribute[T]:Attribute[T]"></a>
       <h4 class="signature">
@@ -110,9 +119,14 @@
       <span class="symbol">
         <a href="Attribute.html"><span class="name">Attribute</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Attribute.T">T</span>]</span>
       </span>
-      </h4>
-      <p class="comment cmt">Attributes are passiv data for a generator, e.</p>
-    </li><li name="org.scex.BatchModifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Attribute[T]extendsAnnotation[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Attributes are passiv data for a generator, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Attributes are passiv data for a generator, e.g. FontFamily.
+</p></div></div>
+    </li><li name="org.scex.BatchModifiers" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="BatchModifiersextendsAnyRef"></a>
       <a id="BatchModifiers:BatchModifiers"></a>
       <h4 class="signature">
@@ -123,9 +137,25 @@
       <span class="symbol">
         <a href="BatchModifiers.html"><span class="name">BatchModifiers</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Used to modify multiple nodes.</p>
-    </li><li name="org.scex.Builder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@BatchModifiersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Used to modify multiple nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Used to modify multiple nodes.</p><pre><span class="kw">def</span> list = {
+  <span class="kw">val</span> block = text
+  <span class="kw">val</span> line  =
+    text &amp;
+    SpaceAfter &gt; <span class="num">0</span> &amp;
+    PreText &gt; <span class="lit">"￢ﾀﾢ "</span>
+
+  line asMinorOf block
+}
+
+list ||
+  <span class="lit">"Item 1"</span> |
+  <span class="lit">"Item 2"</span></pre></div></div>
+    </li><li name="org.scex.Builder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="BuilderextendsElement"></a>
       <a id="Builder:Builder"></a>
       <h4 class="signature">
@@ -136,8 +166,19 @@
       <span class="symbol">
         <a href="Builder.html"><span class="name">Builder</span></a><span class="result"> extends <a href="Element.html" class="extype" name="org.scex.Element">Element</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">Helper to create new nodes.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@BuilderextendsElement" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper to create new nodes.</p><div class="fullcomment"><div class="comment cmt"><p>Helper to create new nodes. Use one of its subclasses to create your own document.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@implicitNotFound</span><span class="args">(<span>
+      
+      <span class="symbol">&quot;Use this method inside a Builder.&quot;</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="org.scex.Element" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="ElementextendsNode"></a>
       <a id="Element:Element"></a>
@@ -149,7 +190,11 @@
       <span class="symbol">
         <a href="Element.html"><span class="name">Element</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@ElementextendsNode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.Graphic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="GraphicextendsNode"></a>
@@ -162,9 +207,31 @@
       <span class="symbol">
         <a href="Graphic.html"><span class="name">Graphic</span></a><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@GraphicextendsNode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
-    </li><li name="org.scex.Modifier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.scex.Inlineable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InlineableextendsAnyRef"></a>
+      <a id="Inlineable:Inlineable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Inlineable.html"><span class="name">Inlineable</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@InlineableextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Marker trait for everything that could be used inline
+</p>
+    </li><li name="org.scex.Modifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Modifier[T]extendsModifierswithProductwithSerializable"></a>
       <a id="Modifier[T]:Modifier[T]"></a>
       <h4 class="signature">
@@ -175,10 +242,18 @@
       <span class="symbol">
         <a href="Modifier.html"><span class="name">Modifier</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="annotation">annotation: <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Modifier.T">T</span>]</span>, <span name="value">value: <span class="extype" name="org.scex.Modifier.T">T</span></span>)</span><span class="result"> extends <a href="Modifiers.html" class="extype" name="org.scex.Modifiers">Modifiers</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">A tuple of an Annotation and a value, ready to be applied to a node.</p>
-    </li><li name="org.scex.Modifiers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ModifiersextendsIterable[org.scex.Modifier[_]]"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Modifier[T]extendsModifierswithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tuple of an Annotation and a value, ready to be applied to a node.</p><div class="fullcomment"><div class="comment cmt"><p>A tuple of an Annotation and a value, ready to be applied to a node.
+A single Modifier extends the seq type Modifiers because it allows all
+operations like Modifiers.</p><pre><span class="kw">val</span> warning = TextColor &gt; red</pre><p>Where <code>TextColor</code> is an <code>Attribute</code> (of type <code>Color</code>) and <code>red</code> a predefined color
+(both are part of <code>scex.attributes</code>.</p><p>Inside a <code>Builder</code> it's now possiblie to do:</p><pre>text &amp; warning | <span class="lit">"Warning message"</span></pre><p>or even shorter:</p><pre><span class="kw">val</span> warning = text &amp; TextColor &gt; red
+warning<span class="lit">"Warning message"</span></pre></div></div>
+    </li><li name="org.scex.Modifiers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ModifiersextendsIterable[org.scex.Modifier[_]]withInlineable"></a>
       <a id="Modifiers:Modifiers"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -186,12 +261,18 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]]</span>
+        <a href="Modifiers.html"><span class="name">Modifiers</span></a><span class="result"> extends <span class="extype" name="scala.Iterable">Iterable</span>[<a href="Modifier.html" class="extype" name="org.scex.Modifier">Modifier</a>[_]] with <a href="Inlineable.html" class="extype" name="org.scex.Inlineable">Inlineable</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">A set of Modifiers.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@ModifiersextendsIterable[org.scex.Modifier[_]]withInlineable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A set of Modifiers.</p><div class="fullcomment"><div class="comment cmt"><p>A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
+this way.
+</p></div></div>
     </li><li name="org.scex.Node" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="NodeextendsAnyRef"></a>
+      <a id="NodeextendsInlineable"></a>
       <a id="Node:Node"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -199,9 +280,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="Node.html"><span class="name">Node</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="Node.html"><span class="name">Node</span></a><span class="result"> extends <a href="Inlineable.html" class="extype" name="org.scex.Inlineable">Inlineable</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@NodeextendsInlineable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.Processor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="Processor[T]extendsAnnotation[T]"></a>
@@ -214,8 +299,12 @@
       <span class="symbol">
         <a href="Processor.html"><span class="name">Processor</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Annotation.html" class="extype" name="org.scex.Annotation">Annotation</a>[<span class="extype" name="org.scex.Processor.T">T</span>]</span>
       </span>
-      </h4>
-      <p class="comment cmt">A processor can modifiy annotated nodes.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Processor[T]extendsAnnotation[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A processor can modifiy annotated nodes.</p>
     </li><li name="org.scex.Text" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TextextendsNodewithProductwithSerializable"></a>
       <a id="Text:Text"></a>
@@ -227,21 +316,12 @@
       <span class="symbol">
         <a href="Text.html"><span class="name">Text</span></a><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Node.html" class="extype" name="org.scex.Node">Node</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Text elements contains only one string and have no attributes.</p>
-    </li><li name="org.scex.Toggle" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ToggleextendsAnyRef"></a>
-      <a id="Toggle:Toggle"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="Toggle.html"><span class="name">Toggle</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt">Add unary + and - prefixes operators for boolean annotations.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@TextextendsNodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Text elements contains only one string and have no attributes.</p>
     </li></ol>
             </div>
 
@@ -260,7 +340,11 @@
       <span class="symbol">
         <a href="BatchModifiers$.html"><span class="name">BatchModifiers</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@BatchModifiers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.Element" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Element"></a>
@@ -273,7 +357,11 @@
       <span class="symbol">
         <a href="Element$.html"><span class="name">Element</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Element" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.Modifiers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Modifiers"></a>
@@ -286,7 +374,11 @@
       <span class="symbol">
         <a href="Modifiers$.html"><span class="name">Modifiers</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@Modifiers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.attributes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="attributes"></a>
@@ -299,7 +391,11 @@
       <span class="symbol">
         <a href="attributes/package.html"><span class="name">attributes</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@attributes" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.generators" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="generators"></a>
@@ -312,7 +408,11 @@
       <span class="symbol">
         <a href="generators/package.html"><span class="name">generators</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@generators" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex#strToText" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="strToText(str:String):org.scex.Text"></a>
@@ -325,7 +425,11 @@
       <span class="symbol">
         <span class="name">strToText</span><span class="params">(<span name="str">str: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Text.html" class="extype" name="org.scex.Text">Text</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@strToText(str:String):org.scex.Text" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex#stringContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="stringContext:Option[StringContext]"></a>
@@ -338,7 +442,11 @@
       <span class="symbol">
         <span class="name">stringContext</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.StringContext">StringContext</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@stringContext:Option[StringContext]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex#stringContext_=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="stringContext_=(cs:StringContext):Unit"></a>
@@ -351,7 +459,11 @@
       <span class="symbol">
         <span title="gt4s: stringContext_$eq" class="name">stringContext_=</span><span class="params">(<span name="cs">cs: <span class="extype" name="scala.StringContext">StringContext</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@stringContext_=(cs:StringContext):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex#strsToTexts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="strsToTexts(strs:Seq[String]):Seq[org.scex.Text]"></a>
@@ -364,7 +476,11 @@
       <span class="symbol">
         <span class="name">strsToTexts</span><span class="params">(<span name="strs">strs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Text.html" class="extype" name="org.scex.Text">Text</a>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@strsToTexts(strs:Seq[String]):Seq[org.scex.Text]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li><li name="org.scex.templates" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="templates"></a>
@@ -377,7 +493,11 @@
       <span class="symbol">
         <a href="templates/package.html"><span class="name">templates</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.scex.package@templates" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
