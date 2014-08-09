@@ -10,7 +10,7 @@ object Main extends App {
     "PDF" -> PDF,
     "Welcome" -> Welcome)
 
-  args.headOption getOrElse("HTML") match {
+  args.headOption getOrElse ("HTML") match {
     case "all" =>
       examples.values foreach (_.main(args drop 1))
     case name =>

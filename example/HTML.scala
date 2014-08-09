@@ -65,10 +65,10 @@ object HTML extends templates.Presentation with templates.Run {
   section"What is open to do?"
 
   val todo = List(
-	"More attributes",
-	"Implementing good and usefull templates, like DIN-A4, sections and so on...",
-	"Implement document reflections (current task)",
-	"Find a way to add include object like images and charts")
+    "More attributes",
+    "Implementing good and usefull templates, like DIN-A4, sections and so on...",
+    "Implement document reflections (current task)",
+    "Find a way to add include object like images and charts")
 
   list | todo
 

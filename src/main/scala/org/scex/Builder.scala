@@ -13,9 +13,9 @@ trait Builder extends Element {
   lazy val children = buffer.map {
     case child: Element =>
       child.modifiers.foldLeft(Element(child.children, Modifiers.empty): Element) {
-        case (elem:Element, bind @ Modifier(_: Attribute[_], _)) =>
+        case (elem: Element, bind @ Modifier(_: Attribute[_], _)) =>
           Element(elem.children, elem.modifiers & bind)
-        case (elem:Element, Modifier(proc: Processor[_], value)) =>
+        case (elem: Element, Modifier(proc: Processor[_], value)) =>
           proc(value, elem)
       }
     case node => node

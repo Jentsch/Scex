@@ -7,4 +7,3 @@ package org.scex.attributes
  * @define Name WhiteSpaceCollapse
  */
 object WhiteSpaceCollapse extends Toggle("WhiteSpaceCollapse")
-

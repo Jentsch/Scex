@@ -2,7 +2,7 @@ package org.scex.attributes
 
 trait Breaks {
   sealed class Break(val name: String)
- 
+
   /**
    * Neighter deny a page brake or force it.
    */
@@ -12,7 +12,7 @@ trait Breaks {
     val even = new Break("even-page")
   }
   val column = new Break("column")
-  
+
   val BreakBefore = new Attribute[Break]("BreakBefore")
-  val BreakAfter  = new Attribute[Break]("BreakAfter")
+  val BreakAfter = new Attribute[Break]("BreakAfter")
 }

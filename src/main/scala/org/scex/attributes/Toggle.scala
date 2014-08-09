@@ -18,4 +18,3 @@ class Toggle(name: String) extends Attribute[Boolean](name) {
    */
   def unary_- = this > false
 }
-

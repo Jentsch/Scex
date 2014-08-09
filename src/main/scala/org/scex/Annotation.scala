@@ -12,7 +12,7 @@ sealed abstract class Annotation[T](val name: String) {
   /**
    * Creates a modifier.
    */
-  def > (value:T) = new Modifier(this, value)
+  def >(value: T) = new Modifier(this, value)
 
   //XXX: Casting
   def unapply(modifier: Modifier[_]) =

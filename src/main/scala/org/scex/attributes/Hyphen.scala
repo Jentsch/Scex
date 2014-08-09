@@ -9,7 +9,7 @@ object Hyphen extends Processor[Lang]("hypen") {
   def process(lang: Lang, node: Node): Node = node match {
     case elem: Element =>
       process(lang, elem)
-    case Text(text) => 
+    case Text(text) =>
       Text(withHypen(text, lang))
     case node =>
       node
@@ -17,9 +17,9 @@ object Hyphen extends Processor[Lang]("hypen") {
 
   // TODO: Create a version with more performance
   private[attributes] def withHypen(text: String, lang: Lang): String = {
-    val (nonWord, rest) = text span (! _.isLetter)
+    val (nonWord, rest) = text span (!_.isLetter)
     val (word, rest2) = rest span (_.isLetter)
 
-    nonWord + lang.hypenOf(word) + (if(rest2.isEmpty) "" else withHypen(rest2, lang))
+    nonWord + lang.hypenOf(word) + (if (rest2.isEmpty) "" else withHypen(rest2, lang))
   }
 }

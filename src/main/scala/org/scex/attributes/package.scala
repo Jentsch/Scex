@@ -4,16 +4,14 @@ import org.scex._
 import java.net.URL
 
 package object attributes
-	extends Breaks
-	with Color.PreDefs
-	with Display
-	with Font
-	with Spaces {
+  extends Breaks
+  with Color.PreDefs
+  with Display {
 
   /**
    * Imports the Attribute type into this package.
    */
-  private[attributes] type Attribute[T] = org.scex.Attribute[T]
+  private[attributes]type Attribute[T] = org.scex.Attribute[T]
 
   object PreText extends Processor[String]("PreText") {
     private def helper(value: String, node: Node): Node = node match {
@@ -22,7 +20,7 @@ package object attributes
       case Element(none, attr) =>
         Element(Text(value) +: none, attr)
       case Text(text) =>
-        Text(value+text)
+        Text(value + text)
       case node =>
         node
     }
@@ -35,10 +33,10 @@ package object attributes
           ???
       }
 
-	}
+  }
 
   object Link extends Attribute[URL]("Link") {
-    def > (str: String): Modifier[URL] =
+    def >(str: String): Modifier[URL] =
       this > new URL(str)
   }
 
@@ -51,9 +49,9 @@ package object attributes
    */
   val capitalize = new TextTransform("capitalize")
   /** Puts all characters of each word in uppercase. */
-  val uppercase  = new TextTransform("uppercase")
+  val uppercase = new TextTransform("uppercase")
   /** Puts all characters of each word in lowercase */
-  val lowercase  = new TextTransform("lowercase")
+  val lowercase = new TextTransform("lowercase")
 
   val TextTransform = new Attribute[TextTransform]("TextTransform")
 
@@ -68,9 +66,23 @@ package object attributes
     def cm = Distance.centimeter(int)
     def pt = Distance.point(int)
   }
+
+  val SpaceBefore = new Attribute[Distance]("SpaceBefore")
+  val SpaceAfter = new Attribute[Distance]("SpaceAfter")
+
+  /**
+   * Weight of the font as specified in TrueType between 100 and 900.
+   */
+  val FontWeight = new Attribute[Int]("FontWeight")
+  val bold = FontWeight > 700
+
+  val FontFamily = new Attribute[String]("FontFamily")
+  val FontSize = new Attribute[Distance]("FontSize")
+
+  val LineHeight = new Attribute[Int]("LineHeight")
 }
 
 package attributes {
-  final class TextTransform private[attributes](val name: String)
+  final class TextTransform private[attributes] (val name: String)
 }
 

@@ -28,7 +28,7 @@ final case class Text(val text: String) extends Node {
 }
 
 // TODO: need concept for external sources
-final class Graphic private() extends Node {
+final class Graphic private () extends Node {
   def toText: String = ""
 }
 
@@ -37,7 +37,7 @@ trait Element extends Node {
   def children: Seq[Node]
 
   override def toString: String =
-    modifiers.mkString("Element(",", ", "") + children.mkString(" :",", ",")")
+    modifiers.mkString("Element(", ", ", "") + children.mkString(" :", ", ", ")")
 
   def toText: String = children.map(_.toText).mkString(" ")
 }

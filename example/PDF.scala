@@ -45,7 +45,7 @@ object PDF extends Presentation with Run {
   """
 
   section"Definitions"
- 
+
   p"""
     def warning = p & TextColor > red
     override def p = super.p & FontFamily > "MyFont"
@@ -59,7 +59,10 @@ object PDF extends Presentation with Run {
 
   case class GitHubRepo(user: String, name: String)
   implicit def repo2node(repo: GitHubRepo) =
-    Element(children = Seq(Text(repo.user) add +TextUnderline, Text(" / "), Text(repo.name) add +TextUnderline))
+    Element(children = Seq(
+      Text(repo.user) add +TextUnderline,
+      Text(" / "),
+      Text(repo.name) add +TextUnderline))
 
   val repo = GitHubRepo("djentsch", "Scex")
 
@@ -80,11 +83,11 @@ object PDF extends Presentation with Run {
   section"What is open to do?"
 
   val todo = List(
-	"More attributes",
-	"Implementing good and usefull templates, like DIN-A4, sections and so on...",
-	"Implement inline formating, for that see String INterpolation in Scala 2.10",
-	"Implement document reflections (current task)",
-	"Find a way to add include object like images and charts")
+    "More attributes",
+    "Implementing good and usefull templates, like DIN-A4, sections and so on...",
+    "Implement inline formating, for that see String INterpolation in Scala 2.10",
+    "Implement document reflections (current task)",
+    "Find a way to add include object like images and charts")
 
   list | todo
 

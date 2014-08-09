@@ -7,8 +7,8 @@ trait General extends Builder {
 
   def text =
     FontFamily > "Times Roman" &
-    FontSize > 12.pt &
-    TextAlign > "justify"
+      FontSize > 12.pt &
+      TextAlign > "justify"
 
   def p = text &
     Display > block &
@@ -33,11 +33,11 @@ trait General extends Builder {
 
   def author =
     headline &
-    PreText > "Autor: "
+      PreText > "Autor: "
 
   def chapter = headline &
-  	BreakBefore > page &
-  	FontSize > 32.pt
+    BreakBefore > page &
+    FontSize > 32.pt
 
   def section = headline
 
@@ -48,10 +48,10 @@ trait General extends Builder {
 
   def list = {
     val block = text
-    val line  =
+    val line =
       text &
-      SpaceAfter > 0.pt &
-      PreText > "• "
+        SpaceAfter > 0.pt &
+        PreText > "• "
 
     line asMinorOf block
   }

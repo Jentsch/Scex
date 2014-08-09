@@ -7,18 +7,18 @@ sealed trait Lang {
 
   private val hyphen: Map[String, String] =
     io.Source.fromInputStream(getClass.getResourceAsStream(toString + ".dic")).
-    getLines.
-    map(_.replace("-", "\u00AD")).
-    flatMap{ word =>
-      if (word contains '(')
-        Seq(word takeWhile (_ != '('), word filterNot Bracket)
-      else
-        Seq(word)
-    }.
-    toTraversable.
-    groupBy(_.replace("\u00AD", "")).
-    mapValues(_.head).
-    withDefault(identity)
+      getLines.
+      map(_.replace("-", "\u00AD")).
+      flatMap { word =>
+        if (word contains '(')
+          Seq(word takeWhile (_ != '('), word filterNot Bracket)
+        else
+          Seq(word)
+      }.
+      toTraversable.
+      groupBy(_.replace("\u00AD", "")).
+      mapValues(_.head).
+      withDefault(identity)
 }
 
 private object Lang {
