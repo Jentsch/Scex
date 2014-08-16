@@ -5,9 +5,10 @@ import org.scex._
 
 class HyphenTest extends Specification { 
 
-  object hyphen {
+  // Makes the tests more readable
+  private object hyphen {
     case class of(text: String) {
-      def in(lang: Lang) = Hyphen.withHypen(text, lang).replace("\u00AD", "-")
+      def in(lang: Lang) = lang.addHypenTo(text).replace("\u00AD", "-")
     }
   }
 

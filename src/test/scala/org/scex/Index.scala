@@ -7,6 +7,7 @@ def is = s2"""
   ${"Test Results".title urlIs "index.html"}
 ### Core
   ${see(new ModifiersTest)}
+  ${see(new InlineFormatTest)}
 
 ### Generators
   ${pending}

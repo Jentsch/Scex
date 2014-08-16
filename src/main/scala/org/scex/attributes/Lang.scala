@@ -5,6 +5,26 @@ sealed trait Lang {
 
   def hypenOf(word: String): String = hyphen(word)
 
+  /**
+   * Adds hypens to all words (groups of letters), leaves non letters untouched.
+   */
+  def addHypenTo(text: String): String = {
+    def helper(text: String, accu: StringBuilder): StringBuilder = {
+      val (nonWord, rest) = text span (!_.isLetter)
+      val (word, rest2) = rest span (_.isLetter)
+
+      accu.append(nonWord)
+      accu.append(hypenOf(word))
+
+      if (rest2.isEmpty)
+        accu
+      else
+        helper(rest2, accu)
+    }
+
+    helper(text, new StringBuilder).toString
+  }
+
   private val hyphen: Map[String, String] =
     io.Source.fromInputStream(getClass.getResourceAsStream(toString + ".dic")).
       getLines.

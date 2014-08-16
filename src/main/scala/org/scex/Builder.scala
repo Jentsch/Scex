@@ -12,11 +12,16 @@ trait Builder extends Element {
   private var buffer = List.empty[Node]
   lazy val children = buffer.map {
     case child: Element =>
-      child.modifiers.foldLeft(Element(child.children, Modifiers.empty): Element) {
+      val base = child.children match {
+        case Seq(n: Text) => n
+        case children => Element(children)
+      }
+      child.modifiers.foldLeft(base) {
         case (elem: Element, bind @ Modifier(_: Attribute[_], _)) =>
           Element(elem.children, elem.modifiers & bind)
         case (elem: Element, Modifier(proc: Processor[_], value)) =>
-          proc(value, elem)
+          //FIXME: This 'self' isn't correct
+          proc(self, elem, value)
       }
     case node => node
   }

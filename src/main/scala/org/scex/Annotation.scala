@@ -25,20 +25,37 @@ sealed abstract class Annotation[T](val name: String) {
 }
 
 /**
- * Attributes are passiv data for a generator, e.g. FontFamily.
+ * Attributes are passive data for a generator, e.g. FontFamily.
  */
 class Attribute[T](name: String) extends Annotation[T](name)
 
 /**
- * A processor can modifiy annotated nodes.
+ * A processor can modify annotated nodes.
  */
 abstract class Processor[T](name: String) extends Annotation[T](name) {
-  private[scex] def apply(value: T, node: Element) =
-    process(value, node)
+  def apply(root: Element, node: Element, value: T): Node
+}
 
-  /**
-   * Process the assigned element.
-   */
-  protected[scex] def process(value: T, element: Element): Element
+object Processor {
+  def apply(name: String) = new Factory(name)
+
+  class Factory(name: String) {
+    /**
+     * The processor takes the so far constructed document, the annotated element and the parameter
+     * given by the annotation and returns the new node.
+     */
+    def apply[T](p: (Element, Element, T) => Node) = new Processor[T](name) {
+      def apply(root: Element, node: Element, value: T) =
+        p(root, node, value)
+    }
+
+    /**
+     * The annotated element and the parameter given by the annotation and returns the new node.
+     */
+    def apply[T](p: (Element, T) => Node) = new Processor[T](name) {
+      def apply(root: Element, node: Element, value: T) =
+        p(node, value)
+    }
+  }
 }
 
