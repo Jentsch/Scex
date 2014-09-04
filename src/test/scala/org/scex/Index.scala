@@ -10,6 +10,7 @@ def is = s2"""
   ${see(new ModifiersTest)}
   ${see(new InlineFormatTest)}
   ${see(new AutoFormatTest)}
+  ${see(new ReferenceTest)}
 
 ### Generators
   ${pending}

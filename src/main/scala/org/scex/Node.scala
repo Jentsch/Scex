@@ -27,19 +27,26 @@ final case class Text(val text: String) extends Node {
   def toText: String = text
 }
 
+object Text {
+  val empty = Text("")
+}
+
 // TODO: need concept for external sources
 final class Graphic private () extends Node {
   def toText: String = ""
 }
 
 trait Element extends Node {
-  def modifiers: Modifiers
   def children: Seq[Node]
+  def modifiers: Modifiers
 
   override def toString: String =
     modifiers.mkString("Element(", ", ", "") + children.mkString(" :", ", ", ")")
 
   def toText: String = children.map(_.toText).mkString(" ")
+
+  def update(children: Seq[Node] = children, modifiers: Modifiers = modifiers) =
+    Element(children, modifiers)
 }
 
 object Element {

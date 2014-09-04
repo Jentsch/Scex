@@ -57,5 +57,11 @@ object Processor {
         p(node, value)
     }
   }
+
+  def lazyNode[T](name: String)(result: T => Node): Processor[T] = new Processor[T](name) {
+    def apply(root: Element, node: Element, value: T) =
+      result(value)
+  }
+
 }
 

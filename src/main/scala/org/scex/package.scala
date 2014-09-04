@@ -15,5 +15,13 @@ package object scex {
   def stringContext_=(cs: StringContext): Unit = {
     _stringContext.value = Some(cs)
   }
+
+  private val refProcessor =
+    Processor.lazyNode[() => Node]("refText"){ node =>
+      Text(node().toText)
+    }
+
+  def refText(ref: => Node): Node =
+    Text.empty.add(refProcessor > (() => ref))
 }
 
