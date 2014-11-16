@@ -11,4 +11,4 @@ This is a developing libary, may you want to run some examples.
 
 API
 ----
-The is hosted under: http://jentsch.github.io/Scex/api
+The API is hosted at http://jentsch.github.io/Scex/api
