@@ -1,5 +1,7 @@
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.3.0")
 
-resolvers += "linter" at "http://hairyfotr.github.io/linteRepo/releases"
+resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
 
-addCompilerPlugin("com.foursquare.lint" %% "linter" % "0.1-SNAPSHOT")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.0.4")
+
+addSbtPlugin("com.codacy" % "sbt-codacy-coverage" % "1.0.3")
