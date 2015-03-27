@@ -19,6 +19,9 @@ project/plugins/project/
 .project
 .settings/
 
+# Intellij specific
+.idea/
+
 # output of the example
 HTML.html
 PDF.html
