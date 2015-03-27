@@ -10,12 +10,12 @@ import scala.collection.mutable.ListBuffer
 trait Builder extends Element {
   val modifiers = Modifiers.empty
 
-  /** So far collected children in ''reverse'' order, it's a stack */
-  private var buffer: List[Node] = Nil
+  /** So far collected children */
+  private val buffer = ListBuffer.empty[Node]
   private var alreadyBuild = false
   lazy val children = {
     alreadyBuild = true
-    buffer.reverse
+    buffer.toList
   }
 
   /** Used by children to register them self. */
@@ -24,7 +24,7 @@ trait Builder extends Element {
   /** Adds a node to this Builder */
   private[scex] def register(n: Node): Unit = {
     assert(!alreadyBuild, "The build phase is already over!")
-    buffer = n :: buffer
+    buffer.append(n)
   }
 
   /**
