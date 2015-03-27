@@ -1,5 +1,4 @@
 package org.scex
-import scala.collection.generic.TraversableFactory
 
 /**
  * A set of Modifiers. Is like a Map[Annotation[T], T], but that can't expressed
@@ -13,16 +12,12 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
 
   // XXX: Is in O(n), should be O(log n)
   def get[T](annotation: Annotation[T]) =
-    modifiers.
-      collectFirst { case annotation(t) => t }
+    modifiers.collectFirst { case annotation(t) => t }
 
-  def isDefinedAt(annotation: Annotation[_]) =
+  def isDefinedAt(annotation: Annotation[_]): Boolean =
     get(annotation) != None
 
-  def apply[T](annotation: Annotation[T]) =
-    get(annotation).get
-
-  def &(that: Modifiers) =
+  def &(that: Modifiers): Modifiers =
     this ++ that
 
   override def filter(condition: Modifier[_] => Boolean) =
@@ -51,15 +46,21 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
    */
   def annotations = modifiers.map { _.annotation }.toSet
 
-  override def toString = modifiers.mkString("Modifiers(", ", ", ")")
+  override def toString() = modifiers.mkString("Modifiers(", ", ", ")")
 
   /**
-   * Used for the string inpolation feature.
+   * Used for the string interpolation feature.
+   *
+   * Example:
+   * {{{
+   *   def p: Modifiers = FontFamily > "Arial"
+   *
+   *   p"A $bold link ${link > "wikipedia.org"}{to wikipedia}."
+   * }}}
    */
-  //TODO: refere to the documentation about the string interpolation
   def apply(params: Inlineable*)(implicit b: Builder): Element = {
     val sc = stringContext getOrElse sys.error("No StringContext given")
-    val head: Text = sc.parts.head
+    val head: Text = sc.parts.headOption getOrElse sys.error("Empty StringContext given")
 
     val tail: Seq[Node] = params zip sc.parts.tail flatMap {
       // finde modifers with append a append group
