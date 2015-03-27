@@ -17,6 +17,8 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-Xlint")
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.3"
 
 // Tests
+resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+
 libraryDependencies += "org.specs2" %% "specs2" % "2.4.17" % "test"
 
 libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0" % "test"
