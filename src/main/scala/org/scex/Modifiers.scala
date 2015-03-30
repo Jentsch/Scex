@@ -104,6 +104,13 @@ object Modifiers {
       val modifiers = binds
     }
   }
+  
+  def unapply(modifiers: Modifiers): Option[(Modifier[_], Modifiers)] = modifiers.modifiers match {
+    case first +: rest =>
+      Some(first -> Modifiers(rest))
+    case _ =>
+      None
+  }
 
   val empty = Modifiers(List.empty)
 }

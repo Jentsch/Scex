@@ -27,6 +27,6 @@ class AutoFormatTest extends Specification {
   def is = s2"""
 ${"Autoformat".title}
   ${textparts of result must be equalTo Seq("Hello ", "Bob")}
-  ${result.children(1).asInstanceOf[Element].modifiers(TextUnderline) must be equalTo true}
+  ${result.children(1).asInstanceOf[Element].modifiers.get(TextUnderline) must be equalTo Some(true)}
   """
 }
