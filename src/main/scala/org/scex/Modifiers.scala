@@ -8,25 +8,25 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
 
   protected val modifiers: Seq[Modifier[_]]
 
-  def iterator = modifiers.iterator
+  def iterator: Iterator[Modifier[_]] = modifiers.iterator
 
   // XXX: Is in O(n), should be O(log n)
-  def get[T](annotation: Annotation[T]) =
+  def get[T](annotation: Annotation[T]): Option[T] =
     modifiers.collectFirst { case annotation(t) => t }
 
   def isDefinedAt(annotation: Annotation[_]): Boolean =
-    get(annotation) != None
+    get(annotation).isDefined
 
   def &(that: Modifiers): Modifiers =
     this ++ that
 
-  override def filter(condition: Modifier[_] => Boolean) =
+  override def filter(condition: Modifier[_] => Boolean): Modifiers =
     Modifiers(modifiers filter condition)
 
-  override def filterNot(condition: Modifier[_] => Boolean) =
+  override def filterNot(condition: Modifier[_] => Boolean): Modifiers =
     Modifiers(modifiers filterNot condition)
 
-  def ++(that: Modifiers) =
+  def ++(that: Modifiers): Modifiers =
     Modifiers(modifiers.filterNot { bind => that.annotations.contains(bind.annotation) } ++ that.modifiers)
 
   /**
@@ -38,13 +38,13 @@ trait Modifiers extends Iterable[Modifier[_]] with Inlineable {
     result
   }
 
-  def asMinorOf(that: Modifiers) =
+  def asMinorOf(that: Modifiers): BatchModifiers =
     BatchModifiers(that, this)
 
   /**
    * Returns all annotations of this modifier.
    */
-  def annotations = modifiers.map { _.annotation }.toSet
+  def annotations: Set[Annotation[_]] = modifiers.map { _.annotation }.toSet
 
   override def toString() = modifiers.mkString("Modifiers(", ", ", ")")
 
@@ -112,5 +112,5 @@ object Modifiers {
       None
   }
 
-  val empty = Modifiers(List.empty)
+  val empty: Modifiers = Modifiers(List.empty)
 }

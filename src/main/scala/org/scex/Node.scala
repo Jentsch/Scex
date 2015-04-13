@@ -6,7 +6,7 @@ sealed trait Node extends Inlineable {
    * wrapped by a element node with the modifiers.
    */
   final def add(modifiers: Modifiers): Element = this match {
-    // An optimzation
+    // An optimization
     case Element(children, modifiersOld) => Element(children, modifiersOld & modifiers)
     case node => Element(node :: Nil, modifiers)
   }
@@ -23,7 +23,7 @@ sealed trait Node extends Inlineable {
 /**
  * Text elements contains only one string and have no attributes.
  */
-final case class Text(val text: String) extends Node {
+final case class Text(text: String) extends Node {
   def toText: String = text
 }
 

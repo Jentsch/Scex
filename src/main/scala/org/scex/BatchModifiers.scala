@@ -58,6 +58,6 @@ object BatchModifiers {
       nodes.foldLeft(this)(_ | _)
 
     def |(texts: Seq[String]): BatchElement =
-      this | texts.map(Text(_))
+      this | texts.map(Text)
   }
 }

@@ -6,9 +6,9 @@ import language.implicitConversions
  * Scex is a tool to build documents in Scala.
  */
 package object scex {
-  implicit def strToText(str: String) = Text(str)
+  implicit def strToText(str: String): Text = Text(str)
 
-  implicit def strsToTexts(strs: Seq[String]) = strs.map(Text(_))
+  implicit def strsToTexts(strs: Seq[String]): Seq[Text] = strs.map(Text)
 
   private val _stringContext = new util.DynamicVariable[Option[StringContext]](None)
   def stringContext: Option[StringContext] = _stringContext.value

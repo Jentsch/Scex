@@ -5,10 +5,12 @@ import org.scex.attributes._
 import xml.{ Text => XText }
 import xml.{ Node => XNode }
 import xml.{ Elem => XElem }
-import xml.{ TopScope, Null }
+import xml.{ TopScope, Null, NamespaceBinding, UnprefixedAttribute, MetaData }
 import java.net.URL
 
 object HTML {
+  val nameSpace = new NamespaceBinding("ii", "ii", null);
+
   def apply(node: Node): XNode =
     <html>
       <head>
@@ -23,16 +25,27 @@ object HTML {
     case Text(text) =>
       XText(text)
     case Element(children, modifiers) =>
+      val childrenContent = children map content
+      val attrs = Map("style" -> style(modifiers)).filterNot(_._2.isEmpty)
+
       chooseFirst(modifiers)(
-        <span style={ style(modifiers) }>{ children map content }</span>)(
+        elem("span", attrs, childrenContent))(
           Choice(Display) {
             case `block` =>
-              <div style={ style(modifiers) }>{ children map content }</div>
+              elem("div", attrs, childrenContent)
           },
           Choice(Link) {
             case url =>
-              <a style={ style(modifiers) } href={ url.toString }>{ children map content }</a>
+            elem("a", attrs + ("href" -> url.toString), childrenContent)
           })
+  }
+
+  private def elem(name: String, attributes: Map[String, String], children: Seq[XNode]) = {
+    val meta: MetaData = attributes.foldLeft(Null: MetaData) {
+      case (coll, (key, value)) => new UnprefixedAttribute(key, value, coll)
+    }
+
+    XElem(null, name, meta, nameSpace, true, children: _*)
   }
 
   private case class Choice[A, R](annotation: Annotation[A])(val f: PartialFunction[A, R])
@@ -44,10 +57,14 @@ object HTML {
         getOrElse(chooseFirst(modifiers)(default)(rest: _*))
   }
 
-  private def style(atts: Modifiers) =
+  private def style(atts: Modifiers): String =
     atts.collect {
       case Modifier(TextUnderline, true) =>
         "text-decoration: underline"
+      case Modifier(BreakBefore, page) =>
+        "page-break-before:always"
+      case Modifier(BreakAfter, page) =>
+        "page-break-after:always"
       case Modifier(name, value) if name != Link =>
         toCSS(name) + ": " + value.toString
     }.mkString("; ")

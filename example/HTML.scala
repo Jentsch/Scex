@@ -23,9 +23,9 @@ object HTML extends templates.Presentation with templates.Run {
 
   p & TextColor > red | "Scala!"
 
-  chapter"Examples"
+  section"Examples"
 
-  section"Text"
+  subsection"Text"
 
   p"How to write text:"
 
@@ -35,7 +35,7 @@ object HTML extends templates.Presentation with templates.Run {
 
   p"p stands for paragraph, like <p> in HTML"
 
-  section"Sections"
+  subsection"Sections"
 
   p"""
     chapter"Chapter One"
@@ -43,7 +43,7 @@ object HTML extends templates.Presentation with templates.Run {
     p"Your first chapter"
   """
 
-  section"Definitions"
+  subsection"Definitions"
 
   p"""
      def warning = p & TextColor > red
@@ -52,9 +52,9 @@ object HTML extends templates.Presentation with templates.Run {
 
   p"You could use rgb(255, 0, 0) as well."
 
-  chapter"Conclusion"
+  section"Conclusion"
 
-  section"What's cool?"
+  subsection"What's cool?"
 
   p"Everything is type save"
 
@@ -62,7 +62,7 @@ object HTML extends templates.Presentation with templates.Run {
 
   p"Auto format"
 
-  section"What is open to do?"
+  subsection"What is open to do?"
 
   val todo = List(
     "More attributes",
@@ -72,13 +72,13 @@ object HTML extends templates.Presentation with templates.Run {
 
   list | todo
 
-  section"Fancy ideas"
+  subsection"Fancy ideas"
 
   list |
     "Build a Web-Server" |
     "Integrate an other libary to create cool diagrams"
 
-  section"What's not so good?"
+  subsection"What's not so good?"
 
   p"A bit more overhead, e.g. trible quots"
 

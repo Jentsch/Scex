@@ -7,8 +7,8 @@ trait General extends Builder {
 
   def text =
     FontFamily > "Times Roman" &
-      FontSize > 12.pt &
-      TextAlign > "justify"
+    FontSize > 12.pt &
+    TextAlign > "justify"
 
   def p = text &
     Display > block &
@@ -33,7 +33,7 @@ trait General extends Builder {
 
   def author =
     headline &
-      PreText > "Autor: "
+    PreText > "Autor: "
 
   def chapter = headline &
     BreakBefore > page &

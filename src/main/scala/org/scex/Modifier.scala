@@ -12,7 +12,7 @@ package org.scex
  * Where `TextColor` is an `Attribute` (of type `Color`) and `red` a predefined color
  * (both are part of `scex.attributes`.
  *
- * Inside a `Builder` it's now possiblie to do:
+ * Inside a `Builder` it's now possible to do:
  * {{{
  * text & warning | "Warning message"
  * }}}
@@ -23,11 +23,11 @@ package org.scex
  * }}}
  *
  */
-case class Modifier[T](val annotation: Annotation[T], val value: T)
+case class Modifier[T](annotation: Annotation[T], value: T)
   extends Modifiers {
 
   protected val modifiers = List(this)
 
-  override def toString = annotation.toString + "> " + value.toString
+  override def toString() = annotation.toString + "> " + value.toString
 }
 

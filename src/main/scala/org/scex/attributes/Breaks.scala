@@ -1,10 +1,12 @@
 package org.scex.attributes
 
 trait Breaks {
-  sealed class Break(val name: String)
+  sealed class Break(val name: String) {
+    override def toString = name
+  }
 
   /**
-   * Neighter deny a page brake or force it.
+   * Neither deny a page brake or force it.
    */
   val auto = new Break("auto")
   object page extends Break("page") {
