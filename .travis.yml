@@ -1,7 +1,6 @@
 language: scala
 script:
   - sbt clean coverage test
-  - sbt coverageReport coverageAggregate codacyCoverage
   - sbt "project example" "run"
 
   # Tricks to avoid unnecessary cache updates
