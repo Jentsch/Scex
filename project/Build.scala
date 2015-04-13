@@ -5,16 +5,16 @@ object ScexBuild extends Build {
   val web = TaskKey[File]("web", "Creates api doc and tests'")
 
   private var testOut = "console"
+  val target = new File("target/web/")
 
   val webTask =
     web := {
       val log = streams.value.log
 
-      val target = new File("target/web/")
 
       testOut = "html"
       (test in Test).value
-      val tests: File = new File("target/specs2-reports")
+      val tests = new File("target/specs2-reports")
       testOut = "console"
 
       val docs = (doc in Compile).value
@@ -33,13 +33,15 @@ object ScexBuild extends Build {
   lazy val main =
     Project(id = "main", base = file(".")) settings (
       webTask,
-      scalaVersion := "2.11.2",
-      testOptions in Test := Tests.Argument(testOut) :: Nil
+      scalaVersion := "2.11.6",
+      testOptions in Test := Tests.Argument(testOut) :: Nil,
+      libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.3"
     )
 
   lazy val example =
     Project(id = "example", base = file("example")) dependsOn main settings (
       description := "Some simple examples to learn Scex",
-      scalaVersion := "2.11.2"
+      scalaVersion := "2.11.6"
     )
+
 }

@@ -10,11 +10,7 @@ scalacOptions <<= baseDirectory map {
   bd => Seq ("-sourcepath", bd.getAbsolutePath)
 }
 
-scalaVersion := "2.11.6"
-
 scalacOptions ++= Seq("-deprecation", "-feature", "-Xlint")
-
-libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.3"
 
 // Tests
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
