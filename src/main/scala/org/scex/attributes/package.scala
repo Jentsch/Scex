@@ -1,6 +1,5 @@
 package org.scex
 
-import org.scex._
 import java.net.URL
 
 package object attributes
@@ -21,7 +20,7 @@ package object attributes
         Element(Text(value) +: none, attr)
       case Text(text) =>
         Text(value + text)
-      case node =>
+      case _ =>
         node
     }
 
@@ -34,16 +33,16 @@ package object attributes
         Element(elem.children map (process(lang, _)), elem.modifiers)
       case Text(text) =>
         Text(lang addHypenTo text)
-      case node =>
+      case _ =>
         node
     }
 
     process(lang, node)
   }
 
-  object Link extends Attribute[URL]("Link") {
-    def >(str: String): Modifier[URL] =
-      this > new URL(str)
+  object Link extends Attribute[String]("Link") {
+    def >(url: URL): Modifier[String] =
+      this > url.toString
   }
 
   val TextAlign = new Attribute[String]("TextAlign")
@@ -86,6 +85,9 @@ package object attributes
   val FontSize = new Attribute[Distance]("FontSize")
 
   val LineHeight = new Attribute[Int]("LineHeight")
+
+  /** Only for Web documents */
+  val Tag = new Attribute[String]("Tag")
 }
 
 package attributes {

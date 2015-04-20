@@ -2,14 +2,11 @@ package org.scex.generators
 
 import org.scex._
 import org.scex.attributes._
-import xml.{ Text => XText }
-import xml.{ Node => XNode }
-import xml.{ Elem => XElem }
-import xml.{ TopScope, Null, NamespaceBinding, UnprefixedAttribute, MetaData }
-import java.net.URL
+
+import scala.xml.{Elem => XElem, MetaData, NamespaceBinding, Node => XNode, Null, Text => XText, UnprefixedAttribute}
 
 object HTML {
-  val nameSpace = new NamespaceBinding("ii", "ii", null);
+  private val nameSpace = new NamespaceBinding("ii", "ii", null)
 
   def apply(node: Node): XNode =
     <html>
@@ -17,7 +14,7 @@ object HTML {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
       </head>
       <body>
-        { content(node) }
+        {content(node)}
       </body>
     </html>
 
@@ -26,18 +23,15 @@ object HTML {
       XText(text)
     case Element(children, modifiers) =>
       val childrenContent = children map content
-      val attrs = Map("style" -> style(modifiers)).filterNot(_._2.isEmpty)
+      val attrs = Map("style" -> style(styleModifiers(modifiers))).filterNot(_._2.isEmpty)
 
-      chooseFirst(modifiers)(
-        elem("span", attrs, childrenContent))(
-          Choice(Display) {
-            case `block` =>
-              elem("div", attrs, childrenContent)
-          },
-          Choice(Link) {
-            case url =>
-            elem("a", attrs + ("href" -> url.toString), childrenContent)
-          })
+      modifiers.get(Link) match {
+        case Some(path) =>
+          elem("a", attrs + ("href" -> path), childrenContent)
+        case None =>
+          val tag = modifiers.get(Tag).getOrElse("span")
+          elem(tag, attrs, childrenContent)
+      }
   }
 
   private def elem(name: String, attributes: Map[String, String], children: Seq[XNode]) = {
@@ -48,15 +42,6 @@ object HTML {
     XElem(null, name, meta, nameSpace, true, children: _*)
   }
 
-  private case class Choice[A, R](annotation: Annotation[A])(val f: PartialFunction[A, R])
-
-  private def chooseFirst[R](modifiers: Modifiers)(default: => R)(choices: Choice[_, R]*): R = choices match {
-    case empty if empty.isEmpty => default
-    case (choice: Choice[_, _]) +: rest =>
-      modifiers.get(choice.annotation).collect(choice.f).
-        getOrElse(chooseFirst(modifiers)(default)(rest: _*))
-  }
-
   private def style(atts: Modifiers): String =
     atts.collect {
       case Modifier(TextUnderline, true) =>
@@ -65,26 +50,28 @@ object HTML {
         "page-break-before:always"
       case Modifier(BreakAfter, page) =>
         "page-break-after:always"
-      case Modifier(name, value) if name != Link =>
-        toCSS(name) + ": " + value.toString
+      case Modifier(annotation, value) if annotation != Link =>
+        nameTranslation(annotation) + ": " + value.toString
     }.mkString("; ")
 
-  private def toCSS(anno: Annotation[_]) = {
-    val name = anno.name
-    nameTranslation.getOrElse(name, genericToCSS(name))
-  }
+  private val nameTranslation = Map[Annotation[_], String](
+    TextColor -> "color",
+    SpaceAfter -> "margin-bottom",
+    SpaceBefore -> "margin-top").
+    withDefault(genericToCSS)
 
-  private def genericToCSS(name: String) =
-    name.foldLeft("") {
-      case (r, upper) if (upper.isUpper) =>
+  private def genericToCSS(annotation: Annotation[_]): String =
+    annotation.name.foldLeft("") {
+      case (r, upper) if upper.isUpper =>
         r + '-' + upper.toLower
       case (r, lower) =>
         r + lower
     }.tail
 
-  private val nameTranslation = Map(
-    "TextColor" -> "color",
-    "SpaceAfter" -> "margin-bottom",
-    "SpaceBefore" -> "margin-top")
+
+  private def styleModifiers(modifiers: Modifiers) =
+    modifiers.filterNot { case Modifier(anno, _) => isIgnoredAnnotation(anno) }
+
+  private val isIgnoredAnnotation: Set[Annotation[_]] = Set(Tag)
 }
 
