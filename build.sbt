@@ -1,11 +1,14 @@
 name := "scex"
 
-version := "0.2-SNAPSHOT"
+version := "0.2.1"
 
-organization := "de.fu"
+organization := "org.scex"
 
 description := "A Scala innerDSL to describe documents"
 
+licenses += ("Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0"))
+
+// Compiler options
 scalacOptions <<= baseDirectory map {
   bd => Seq ("-sourcepath", bd.getAbsolutePath)
 }
@@ -25,3 +28,6 @@ scalacOptions in Test += "-Yrangepos"
 scalacOptions in (Compile, doc) ++= Opts.doc.sourceUrl("https://github.com/Jentsch/Scex/blob/master€{FILE_PATH}.scala")
 
 scalacOptions in (Compile, doc) ++= Opts.doc.title("Scex")
+
+
+bintrayPublishSettings
